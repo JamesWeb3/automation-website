@@ -18,6 +18,14 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        colfax: ['var(--font-colfax)', 'sans-serif'],
+      },
+      fontWeight: {
+        thin: '100',
+        normal: '400',
+        bold: '700',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

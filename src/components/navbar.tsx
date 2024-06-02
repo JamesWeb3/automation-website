@@ -1,10 +1,11 @@
 import React from "react";
 import ShineBorder from "@/ui/shine-border";
+import Logo from "@/ui/logo";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="flex justify-between w-full">
-      <div>Logo</div>
+    <nav className="flex justify-between items-center w-full">
+      <Logo/>
       <div className="flex items-center gap-12">
         <ul className="flex gap-4">
           <li>Home</li>
