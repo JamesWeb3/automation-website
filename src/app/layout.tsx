@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
-  title: "AutoFlow",
-  description: "Saving your company time and money with next generation automation",
+  title: "Travella",
+  description: "All in one Travel App",
 };
 
 export default function RootLayout({
