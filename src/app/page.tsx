@@ -13,9 +13,7 @@ export default function Home() {
         <h1 className="text-8xl font-semibold">Travella</h1>
         <h2>Lorem Ipsum, sub heading could go here ..</h2>
         <div className="flex gap-2">
-          <div className="cursor-pointer">
-            <BookTripDialog />
-          </div>
+          <BookTripDialog />
 
           <Button>
             <PlaneSVG />
