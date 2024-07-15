@@ -30,6 +30,7 @@ import { Input } from "./ui/input";
 import { createTripSchema } from "@/schemas/index";
 import { UserSVG, CloseSVG } from "./icons";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 type CreateTripSchema = z.infer<typeof createTripSchema>;
 

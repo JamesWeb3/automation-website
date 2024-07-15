@@ -10,6 +10,7 @@ const Navbar: React.FC = () => {
           <li>Register</li>
         </ul>
         <Button variant="outline">Log In</Button>
+        Toggle Hotels
       </div>
     </nav>
   );
