@@ -1,26 +1,34 @@
 import Navbar from "@/components/navbar";
 import Globe from "@/components/magicui/globe";
 import { Button } from "@/ui/button";
+import { PlaneSVG, TrainSVG, AccomodationSVG } from "@/components/icons";
+import { BookTripDialog } from "@/components/book-trip-dialog";
 
 export default function Home() {
   return (
     <main className="bg-[#EAEAEA] min-h-screen p-8 flex-col items-center justify-between">
       <Navbar />
 
-      <div className="flex grid grid-cols-2 bg-red-100 h-max">
-        <div className="bg-green-100">
-          <h1 className="text-7xl">Travella</h1>
-          <h2>hi</h2>
-          <div>
-            <Button>Book Trip</Button>
-            <Button>hi</Button>
-            <Button>hi</Button>
+      <div className="flex flex-col items-center gap-8 mt-8">
+        <h1 className="text-8xl font-semibold">Travella</h1>
+        <h2>Lorem Ipsum, sub heading could go here ..</h2>
+        <div className="flex gap-2">
+          <div className="cursor-pointer">
+            <BookTripDialog />
           </div>
+
+          <Button>
+            <PlaneSVG />
+          </Button>
+          <Button>
+            <TrainSVG />
+          </Button>
+          <Button>
+            <AccomodationSVG />
+          </Button>
         </div>
 
-        <div className="relative bg-yellow-100">
-          {/* <Globe className="top-28 absolute"/> */}
-        </div>
+        <Globe className="top-80 absolute" />
       </div>
     </main>
   );
