@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { MainLayout } from "@/layouts/main-layout";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Form,
   FormControl,
@@ -25,8 +26,58 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { cn } from "@/lib/utils";
+import HotelImage from "../../public/hotel.jpg";
+import Image from "next/image";
+import { BookingComSVG } from "@/components/ui/icons";
+import { BedSVG, BathroomSVG } from "@/components/ui/icons";
 
 type CreateTripSchema = z.infer<typeof createTripSchema>;
+
+interface Hotel {
+  title: string;
+  bathrooms: number;
+  bedrooms: number;
+  sqMtr: number;
+  image?: string;
+}
+
+const hotels: Hotel[] = [
+  {
+    title: "Beautfiul Apartment located 5 minutes from Central Station.",
+    bathrooms: 2,
+    bedrooms: 3,
+    sqMtr: 100,
+    image: "../../public/hotel.jpg",
+  },
+  {
+    title: "Beautfiul Apartment located 5 minutes from Central Station.",
+    bathrooms: 2,
+    bedrooms: 3,
+    sqMtr: 100,
+    image: "../../public/hotel.jpg",
+  },
+  {
+    title: "Beautfiul Apartment located 5 minutes from Central Station.",
+    bathrooms: 2,
+    bedrooms: 3,
+    sqMtr: 100,
+    image: "../../public/hotel.jpg",
+  },
+  {
+    title: "Beautfiul Apartment located 5 minutes from Central Station.",
+    bathrooms: 2,
+    bedrooms: 3,
+    sqMtr: 100,
+    image: "../../public/hotel.jpg",
+  },
+  {
+    title: "Beautfiul Apartment located 5 minutes from Central Station.",
+    bathrooms: 2,
+    bedrooms: 3,
+    sqMtr: 100,
+    image: "../../public/hotel.jpg",
+  },
+];
 
 const createTripSchema = z.object({
   trip_name: z.string(),
@@ -199,7 +250,42 @@ const HotelPage: React.FC = () => {
           </Form>
         </Card>
 
-        <Card className="w-2/3"></Card>
+        <Card className="w-2/3 p-0 bg-transparent">
+          <ScrollArea className="h-screen">
+            <div className="flex grid grid-cols-2 gap-4">
+              {hotels.map((hotel, index) => (
+                <div key={index} className="rounded-lg bg-white">
+                  <Image
+                    alt="hotel thumbnail"
+                    src={HotelImage}
+                    className="rounded-tl-xl rounded-tr-xl"
+                  />
+                  <div className="p-2 rounded-bl-xl rounded-br-xl">
+                    <p className="text-lg font-semibold leading-6">
+                      {hotel.title}
+                    </p>
+
+                    <div className="flex justify-between items-center">
+                      <div className="flex gap-4">
+                        <div className="flex flex-col items-center">
+                          <BedSVG /> {hotel.bedrooms}
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                          <BathroomSVG /> {hotel.bedrooms}
+                        </div>
+                      </div>
+                      <div className="text-blue-600 font-medium">
+                        7.8
+                        <BookingComSVG />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollArea>
+        </Card>
       </div>
     </MainLayout>
   );

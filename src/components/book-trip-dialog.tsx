@@ -27,7 +27,7 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { Input } from "./ui/input";
 import { createTripSchema } from "@/schemas/index";
-import { UserSVG, CloseSVG } from "./icons";
+import { UserSVG, CloseSVG } from "./ui/icons";
 import { useState } from "react";
 import { useRouter } from "next/router";
 

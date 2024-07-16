@@ -1,8 +1,9 @@
 import Navbar from "@/components/navbar";
 import Globe from "@/components/magicui/globe";
 import { Button } from "@/components/ui/button";
-import { PlaneSVG, TrainSVG, AccomodationSVG } from "@/components/icons";
+import { PlaneSVG, TrainSVG, AccomodationSVG } from "@/components/ui/icons";
 import { BookTripDialog } from "@/components/book-trip-dialog";
+import { AuthDialogIndex } from "@/components/auth";
 
 const HomePage: React.FC = () => {
   return (
@@ -28,6 +29,7 @@ const HomePage: React.FC = () => {
 
         <Globe className="top-80 absolute" />
       </div>
+      <AuthDialogIndex/>
     </main>
   );
 }
