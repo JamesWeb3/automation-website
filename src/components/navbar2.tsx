@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -24,39 +24,22 @@ import {
   User,
   UserPlus,
 } from "lucide-react";
-import { DropdownMenuSVG, SuitcaseSVG } from "@/components/ui/icons";
-import Link from "next/link";
+import {
+  DropdownMenuSVG,
+} from "@/components/ui/icons";
 import { AuthDialogIndex } from "@/components/auth";
 import { useAuthModal } from "@/contexts/AuthContext";
+import TripSummary from "@/components/trip-summary";
 
-const Navbar: React.FC = () => {
+const Navbar2: React.FC = () => {
   const { openModal } = useAuthModal();
 
   return (
     <nav className="flex justify-between items-center w-full">
-      <div>Logo</div>
-    
+
+      <TripSummary/>
+     
       <div className="flex items-center gap-6">
-        <ul className="flex gap-4">
-          <p
-            className="cursor-pointer"
-            onClick={() => {
-              openModal("signup");
-            }}
-          >
-            Register
-          </p>
-          <Link href="/hotel">Hotel</Link>
-          <Link href="/">Home</Link>
-        </ul>
-        <Button
-          onClick={() => {
-            openModal("login");
-          }}
-          variant="outline"
-        >
-          Log In
-        </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline">
@@ -124,4 +107,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default Navbar2;
