@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
-import { DM_Sans } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import React from "react";
 
-const dmSans = DM_Sans({
-  weight: ["300", "400", "500", "600", "700"],
+const openSans = Open_Sans({
+  weight: ["300", "400", "600", "700", "800"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -17,7 +17,7 @@ export function MainLayout({ children }: MainLayoutV2Props) {
   return (
     <div
       className={cn(
-        `w-screen overflow-hidden bg-red-100 h-screen p-6 px-12 ${dmSans.className}`
+        `w-screen overflow-hidden bg-muted h-screen p-6 px-12 ${openSans.className}`
       )}
     >
       {children}
