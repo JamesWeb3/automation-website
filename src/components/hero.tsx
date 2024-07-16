@@ -1,8 +1,7 @@
 import React, { Suspense } from "react";
-import { Button } from "@/ui/button";
+import { Button } from "@/components/ui/button";
 
 const Hero: React.FC = () => {
-  const NumberTicker = React.lazy(() => import("@/ui/number-ticker"));
 
   return (
     <div className="flex justify-centerbg-red-100 p-8 rounded-2xl w-full h-full grid grid-cols-2">
@@ -16,22 +15,7 @@ const Hero: React.FC = () => {
 
         <div className="p-4 custom-shadow rounded-lg w-max">
           <Suspense fallback={<div>Loading...</div>}>
-            <div className="flex gap-6">
-              <div>
-                <NumberTicker value={50} />
-                <p>Projects completed</p>
-              </div>
-
-              <div>
-                <NumberTicker value={300000} />
-                <p>Saved from clients</p>
-              </div>
-
-              <div>
-                <NumberTicker value={100} />
-                <p>??</p>
-              </div>
-            </div>
+           
           </Suspense>
         </div>
       </div>

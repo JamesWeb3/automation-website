@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/ui/button";
+import { Button } from "@/components/ui/button";
 
 const Navbar: React.FC = () => {
   return (
@@ -10,7 +10,6 @@ const Navbar: React.FC = () => {
           <li>Register</li>
         </ul>
         <Button variant="outline">Log In</Button>
-        Toggle Hotels
       </div>
     </nav>
   );
