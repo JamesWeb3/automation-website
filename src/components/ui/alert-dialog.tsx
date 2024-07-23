@@ -50,7 +50,7 @@ const AlertDialogHeader = ({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
-    className={cn("flex flex-col justify-between items-center", className)}
+    className={cn("flex justify-between items-center", className)}
     {...props}
   />
 );

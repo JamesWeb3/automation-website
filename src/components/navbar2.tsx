@@ -24,22 +24,37 @@ import {
   User,
   UserPlus,
 } from "lucide-react";
-import {
-  DropdownMenuSVG,
-} from "@/components/ui/icons";
+import { DropdownMenuSVG } from "@/components/ui/icons";
 import { AuthDialogIndex } from "@/components/auth";
-import { useAuthModal } from "@/contexts/AuthContext";
 import TripSummary from "@/components/trip-summary";
+import { useTripContext } from "@/contexts/TripContext";
 
 const Navbar2: React.FC = () => {
-  const { openModal } = useAuthModal();
+  const { tripType, setTripType } = useTripContext();
 
   return (
     <nav className="flex justify-between items-center w-full">
+      <TripSummary />
 
-      <TripSummary/>
-     
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-6 cursor-pointer">
+        <p
+          onClick={() => setTripType("Hotels")}
+          className={tripType === "Hotels" ? "active" : ""}
+        >
+          Hotels
+        </p>
+        <p
+          onClick={() => setTripType("Flights")}
+          className={tripType === "Flights" ? "active" : ""}
+        >
+          Flights
+        </p>
+        <p
+          onClick={() => setTripType("Food")}
+          className={tripType === "Food" ? "active" : ""}
+        >
+          Food
+        </p>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline">

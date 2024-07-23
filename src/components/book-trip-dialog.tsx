@@ -19,6 +19,15 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -33,49 +42,35 @@ import { useRouter } from "next/router";
 
 type CreateTripSchema = z.infer<typeof createTripSchema>;
 
-export function BookTripDialog() {
-  const [userCount, setUserCount] = useState(1);
+interface BookTripDialogProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  selectedLocation: string;
+}
 
-  const handleIncrement = () => {
-    if (userCount < 8) {
-      setUserCount(userCount + 1);
-    }
-  };
-
-  const handleDecrement = () => {
-    if (userCount > 1) {
-      setUserCount(userCount - 1);
-    }
-  };
+export const BookTripDialog: React.FC<BookTripDialogProps> = ({
+  open,
+  onOpenChange,
+  selectedLocation,
+}) => {
+  const router = useRouter();
 
   const form = useForm<CreateTripSchema>({
     resolver: zodResolver(createTripSchema),
   });
 
   const onSubmit: SubmitHandler<CreateTripSchema> = async (data) => {
-    console.log(data);
+    router.push("/trip");
   };
 
   return (
-    <AlertDialog>
-      <AlertDialogTrigger asChild>
-        <div className="bg-black rounded-xl text-white px-4 flex items-center cursor-pointer">
-          ✈️ Book Trip
-        </div>
-        {/* <AnimatedGradientText>
-          ✈️ <hr className="mx-2 h-7 w-[1px] shrink-0 bg-gray-300" />{" "}
-          <span
-            className={cn(
-              `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
-            )}
-          >
-            Book Trip
-          </span>
-        </AnimatedGradientText> */}
-      </AlertDialogTrigger>
+    <AlertDialog open={open} onOpenChange={onOpenChange}>
+      <AlertDialogTrigger>Open</AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Begin You&apos;re Next Adventure</AlertDialogTitle>
+          <AlertDialogTitle>
+            Begin Your Next Adventure in Greece{selectedLocation}
+          </AlertDialogTitle>
           <AlertDialogCancel>
             <CloseSVG />
           </AlertDialogCancel>
@@ -84,7 +79,7 @@ export function BookTripDialog() {
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
               control={form.control}
-              name="trip_name"
+              name="name"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Name Your Trip</FormLabel>
@@ -102,33 +97,25 @@ export function BookTripDialog() {
 
             <FormField
               control={form.control}
-              name="trip_name"
+              name="vibe"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>How Many People Are Coming?</FormLabel>
+                  <FormLabel>What kind of vibe</FormLabel>
                   <FormControl>
-                    <div className="flex gap-6">
-                      <div className="flex gap-3">
-                        <div
-                          className="cursor-pointer"
-                          onClick={handleDecrement}
-                        >
-                          -
-                        </div>
-
-                        <UserSVG />
-
-                        <div
-                          className="cursor-pointer"
-                          onClick={handleIncrement}
-                        >
-                          +
-                        </div>
-                      </div>
-                      <div>
-                        {userCount} {userCount === 1 ? "person" : "people"}
-                      </div>
-                    </div>
+                    <Select>
+                      <SelectTrigger className="w-[180px]">
+                        <SelectValue placeholder="Select a fruit" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          <SelectItem value="apple">Apple</SelectItem>
+                          <SelectItem value="banana">Banana</SelectItem>
+                          <SelectItem value="blueberry">Blueberry</SelectItem>
+                          <SelectItem value="grapes">Grapes</SelectItem>
+                          <SelectItem value="pineapple">Pineapple</SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
                   </FormControl>
 
                   <FormMessage />
@@ -138,26 +125,26 @@ export function BookTripDialog() {
 
             <FormField
               control={form.control}
-              name="trip_name"
+              name="begin"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>How many people are coming?</FormLabel>
+                  <FormLabel>How Do You want to Begin?</FormLabel>
                   <FormControl>
-                    <ToggleGroup type="multiple">
+                    <ToggleGroup type="single">
                       <ToggleGroupItem value="bold" aria-label="Toggle bold">
-                        Chill Vibes
+                        Book Activites
                       </ToggleGroupItem>
                       <ToggleGroupItem
                         value="italic"
                         aria-label="Toggle italic"
                       >
-                        Drinking and Partying
+                        Book Flights
                       </ToggleGroupItem>
                       <ToggleGroupItem
                         value="underline"
                         aria-label="Toggle underline"
                       >
-                        Adventurious and Active
+                        Book Accomodation
                       </ToggleGroupItem>
                     </ToggleGroup>
                   </FormControl>
@@ -168,11 +155,11 @@ export function BookTripDialog() {
             />
 
             <AlertDialogFooter>
-              <Button type="submit">Submit</Button>
+              <Button type="submit">Create Trip</Button>
             </AlertDialogFooter>
           </form>
         </Form>
       </AlertDialogContent>
     </AlertDialog>
   );
-}
+};
