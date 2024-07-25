@@ -37,7 +37,7 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <div className="w-96 z-20">
+    <div className="z-20">
       <Command>
         <CommandInput
           placeholder="Where do you want to go"
@@ -45,9 +45,9 @@ const SearchBar: React.FC = () => {
           onBlur={handleInputBlur}
         />
         {isOpen && (
-          <CommandList>
+          <CommandList className="">
             <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Suggestions">
+            <CommandGroup heading="Search Location" className="bg-red-100 z-20 absolute overflow-auto w-[400px] h-96 rounded-md">
               {cityCountryList.map((location, index) => (
                 <CommandItem
                   key={index}

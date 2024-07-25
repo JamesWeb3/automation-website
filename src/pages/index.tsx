@@ -28,7 +28,10 @@ const HomePage: React.FC = () => {
         <div className="flex flex-col items-center gap-8 mt-8 z-20">
           <h1 className="text-8xl font-semibold">Travella</h1>
           <h2 className="">Travel the world, all in one app</h2>
+          <div className="max-w-[400px] w-full z-20">
           <SearchBar />
+          </div>
+         
           <div className="relative w-full">
             <Globe className="top-[-50px] absolute" />
           </div>

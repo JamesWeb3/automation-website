@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       backgroundImage: {
-        'custom-gradient': 'linear-gradient(to bottom, transparent, transparent, rgba(255, 255, 255, 0.5), white, white)',
+        'custom-gradient': 'linear-gradient(to bottom, transparent, transparent, transparent, transparent, transparent, transparent, rgba(255, 255, 255, 0.5), white, white, white)',
       },
       fontFamily: {
         colfax: ["var(--font-colfax)", "sans-serif"],
