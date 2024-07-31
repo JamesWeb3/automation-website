@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 import { AuthDialogIndex } from "@/components/auth";
 import { useAuthModal } from "@/contexts/AuthContext";
-
+//
 const Navbar: React.FC = () => {
   const { openModal } = useAuthModal();
 
