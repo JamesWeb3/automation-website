@@ -46,7 +46,7 @@ const DropdownMenuComponent: React.FC = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
       <DropdownMenuGroup>
-          <DropdownMenuItem onClick={() => router.push("/home")}>
+          <DropdownMenuItem onClick={() => router.push("/")}>
             <Home className="mr-2 h-4 w-4" />
             <span>Home</span>
           </DropdownMenuItem>

@@ -5,7 +5,7 @@ import {
   CommandInput,
   CommandList,
 } from "@/components/ui/command";
-import { ScrollArea } from "../ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { FlagIcon } from "react-flag-kit";
 import { FlagIconCode, isFlagIconCode } from '@/types/FlagIconCode';
 
