@@ -2,7 +2,7 @@ import Navbar from "@/layouts/navbar";
 import { GridLayout } from "@/layouts/grid-layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ProvidersComponent from "@/components/settings/providers";
-
+import AccountComponent from "@/components/settings/account";
 const SettingsPage: React.FC = () => {
   return (
     <main className="flex flex-col h-screen p-6 items-center overflow-hidden">
@@ -29,7 +29,7 @@ const SettingsPage: React.FC = () => {
           }
           rightChild={
             <div className="flex h-full ">
-              <TabsContent value="account">hi</TabsContent>
+              <TabsContent value="account"><AccountComponent/></TabsContent>
               <TabsContent value="trips">hi</TabsContent>
               <TabsContent value="providers">
                 Providers

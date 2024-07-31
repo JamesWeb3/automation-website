@@ -31,7 +31,6 @@ const TripPage: React.FC = () => {
   return (
     <TripProvider>
       <MainLayout>
-        <Navbar2 />
         <TripContent />
       </MainLayout>
     </TripProvider>

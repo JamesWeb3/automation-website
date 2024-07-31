@@ -20,7 +20,8 @@ import {
   Mail,
   MessageSquare,
   PlusCircle,
-  Router,
+  HandCoins,
+  Home,
   Settings,
   User,
   UserPlus,
@@ -44,7 +45,17 @@ const DropdownMenuComponent: React.FC = () => {
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+      <DropdownMenuGroup>
+          <DropdownMenuItem onClick={() => router.push("/home")}>
+            <Home className="mr-2 h-4 w-4" />
+            <span>Home</span>
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => router.push("/deals")}>
+            <HandCoins className="mr-2 h-4 w-4" />
+            <span>Deals</span>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+     
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
