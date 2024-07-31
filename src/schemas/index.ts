@@ -6,8 +6,9 @@ export const emailValidator = z
   .min(5, "Email must be at least 6 characters long");
 
 export const createTripSchema = z.object({
-  trip_name: z.string().min(1).optional(),
-  openai_api_key: z.string().min(10).optional(),
+  name: z.string().min(1).optional(),
+  vibe: z.string().min(1).optional(),
+  begin: z.date().optional(),
 });
 
 export const loginSchema = z.object({

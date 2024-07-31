@@ -1,6 +1,6 @@
 // pages/trip.tsx
 import React from 'react';
-import Navbar2 from '@/components/navbar2';
+import Navbar2 from '@/layouts/navbar2';
 import { MainLayout } from '@/layouts/main-layout';
 import { GridLayout } from '@/layouts/grid-layout';
 import { TripProvider, useTripContext } from '@/contexts/TripContext';

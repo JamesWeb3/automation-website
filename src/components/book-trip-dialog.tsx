@@ -1,10 +1,8 @@
 "use client";
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
-  AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
@@ -13,7 +11,6 @@ import {
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -24,7 +21,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -36,8 +32,7 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { Input } from "./ui/input";
 import { createTripSchema } from "@/schemas/index";
-import { UserSVG, CloseSVG } from "./ui/icons";
-import { useState } from "react";
+import { CloseSVG } from "./ui/icons";
 import { useRouter } from "next/router";
 
 type CreateTripSchema = z.infer<typeof createTripSchema>;

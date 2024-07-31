@@ -1,22 +1,19 @@
 import React, { useState } from "react";
 import {
   Command,
-  CommandDialog,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command";
 import countryData from "@/data/countries.json";
-import { BookTripDialog } from "@/components/book-trip-dialog";
+import { Label } from "../ui/label";
 
-const SearchBar: React.FC = () => {
+const CountrySearch: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
+  const [selectedLocation, setSelectedLocation] = useState<string>("");
   const [cityCountryList, setCityCountryList] = useState<string[]>(() => {
     return countryData.countries.flatMap((country) =>
       country.cities.map((city) => `${city}, ${country.name}`)
@@ -37,17 +34,21 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <div className="z-20">
+    <div className="z-20 w-full">
       <Command>
+      <Label className="ml-3 mb-[-5px]">Where To</Label>
         <CommandInput
-          placeholder="Where do you want to go"
+          placeholder="Select a country"
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
         />
         {isOpen && (
           <CommandList className="">
             <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Search Location" className="bg-red-100 z-20 absolute overflow-auto w-[400px] h-96 rounded-md">
+            <CommandGroup
+              heading="Search Location"
+              className="z-20 absolute overflow-auto w-[600px] h-96 rounded-md"
+            >
               {cityCountryList.map((location, index) => (
                 <CommandItem
                   key={index}
@@ -60,15 +61,8 @@ const SearchBar: React.FC = () => {
           </CommandList>
         )}
       </Command>
-      {!selectedLocation && (
-        <BookTripDialog
-          open={dialogOpen}
-          onOpenChange={setDialogOpen}
-          selectedLocation={selectedLocation}
-        />
-      )}
     </div>
   );
 };
 
-export default SearchBar;
+export default CountrySearch;
