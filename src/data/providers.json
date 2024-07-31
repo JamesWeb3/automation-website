@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Booking.com",
+        "icon": "/providers/booking.jpeg",
+        "type": "hotel"
+    },
+    {
+        "name": "Airbnb",
+        "icon": "/providers/airbnb.png",
+        "type": "hotel"
+    },
+    {
+        "name": "Expedia",
+        "icon": "/providers/expedia.png",
+        "type": "flights"
+    },
+    {
+        "name": "Trip Advisor",
+        "icon": "/providers/trip_advisor.png",
+        "type": "food"
+    },
+    {
+        "name": "Rome2Rio",
+        "icon": "/providers/rome2rio.jpg",
+        "type": "flights"
+    }
+]

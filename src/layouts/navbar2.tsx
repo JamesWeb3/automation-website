@@ -29,12 +29,17 @@ import { AuthDialogIndex } from "@/components/auth";
 import TripSummary from "@/components/trip-summary";
 import { useTripContext } from "@/contexts/TripContext";
 
-const Navbar2: React.FC = () => {
+interface NavBarProps {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Navbar2: React.FC<NavBarProps> = ({ open, setOpen }) => {
   const { tripType, setTripType } = useTripContext();
 
   return (
     <nav className="flex justify-between items-center w-full">
-      <TripSummary />
+      <TripSummary open={open} setOpen={setOpen} />
 
       <div className="flex items-center gap-6 cursor-pointer">
         <p

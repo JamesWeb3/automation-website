@@ -1,0 +1,88 @@
+[
+  {
+    "id": "2512-1315-2049-0182",
+    "name": "Trip to Greece",
+    "start_date": "13th July",
+    "end_date": "29th July, 2024",
+    "cost": 2000,
+    "bookings": [
+      {
+        "type": "Flight",
+        "name": "Athens to Santorini",
+        "location": "Athens International Airport",
+        "provider": "Aegean Airlines",
+        "paid": true
+      },
+      {
+        "type": "Hotel",
+        "name": "Santorini Hotel",
+        "location": "Santorini",
+        "provider": "Santorini Inn",
+        "paid": false
+      },
+      {
+        "type": "Activity",
+        "name": "Wine Tasting Tour",
+        "location": "Santorini",
+        "provider": "Local Tours",
+        "paid": true
+      },
+      {
+        "type": "Transport",
+        "name": "Car Rental",
+        "location": "Santorini Airport",
+        "provider": "Hertz",
+        "paid": true
+      },
+      {
+        "type": "Flight",
+        "name": "Santorini to Mykonos",
+        "location": "Santorini Airport",
+        "provider": "Olympic Air",
+        "paid": false
+      },
+      {
+        "type": "Hotel",
+        "name": "Mykonos Hotel",
+        "location": "Mykonos",
+        "provider": "Mykonos Beach Resort",
+        "paid": true
+      },
+      {
+        "type": "Activity",
+        "name": "Island Hopping Tour",
+        "location": "Mykonos",
+        "provider": "Island Adventures",
+        "paid": true
+      },
+      {
+        "type": "Transport",
+        "name": "Boat Rental",
+        "location": "Mykonos Port",
+        "provider": "Yacht Charter",
+        "paid": false
+      },
+      {
+        "type": "Food",
+        "name": "Dinner at Thalassa",
+        "location": "Santorini",
+        "provider": "Thalassa Restaurant",
+        "paid": true
+      },
+      {
+        "type": "Food",
+        "name": "Lunch at Taverna",
+        "location": "Mykonos",
+        "provider": "Taverna Restaurant",
+        "paid": false
+      },
+      {
+        "type": "Food",
+        "name": "Breakfast at Hotel",
+        "location": "Santorini Hotel",
+        "provider": "Santorini Inn",
+        "paid": true
+      }
+    ]
+  }
+]

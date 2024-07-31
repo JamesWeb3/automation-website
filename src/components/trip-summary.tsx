@@ -4,145 +4,82 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetFooter,
 } from "@/components/ui/sheet";
 import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { BookingComSVG, SuitcaseSVG } from "@/components/ui/icons";
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Separator } from "./ui/separator";
+import dummydata from "@/data/dummy-trip-data.json";
+import { Edit2, File } from "lucide-react";
+interface TripSummaryProps {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const tableRows = [
-  {
-    statusColor: "#5DA8DF",
-    title: "Hotel Booked in Bucharest",
-    date: "7th - 9th July",
-    paymentStatus: "Paid",
-    paymentStatusBgColor: "bg-green-100",
-    paymentStatusTextColor: "text-green-400",
-    icon: <BookingComSVG />,
-  },
-  {
-    statusColor: "#FF5733",
-    title: "Flight to Paris",
-    date: "10th July",
-    paymentStatus: "Unpaid",
-    paymentStatusBgColor: "bg-yellow-100",
-    paymentStatusTextColor: "text-yellow-400",
-    icon: <BookingComSVG />,
-  },
-  {
-    statusColor: "#4CAF50",
-    title: "Car Rental in Berlin",
-    date: "15th - 20th July",
-    paymentStatus: "Paid",
-    paymentStatusBgColor: "bg-green-100",
-    paymentStatusTextColor: "text-green-400",
-    icon: <BookingComSVG />,
-  },
-  {
-    statusColor: "#FFC107",
-    title: "Dinner Reservation in Rome",
-    date: "21st July",
-    paymentStatus: "Unpaid",
-    paymentStatusBgColor: "bg-yellow-100",
-    paymentStatusTextColor: "text-yellow-400",
-    icon: <BookingComSVG />,
-  },
-  {
-    statusColor: "#9C27B0",
-    title: "Concert Tickets in Vienna",
-    date: "25th July",
-    paymentStatus: "Paid",
-    paymentStatusBgColor: "bg-green-100",
-    paymentStatusTextColor: "text-green-400",
-    icon: <BookingComSVG />,
-  },
-  {
-    statusColor: "#2196F3",
-    title: "Museum Visit in Amsterdam",
-    date: "30th July",
-    paymentStatus: "Unpaid",
-    paymentStatusBgColor: "bg-yellow-100",
-    paymentStatusTextColor: "text-yellow-400",
-    icon: <BookingComSVG />,
-  },
-  {
-    statusColor: "#FF9800",
-    title: "City Tour in Barcelona",
-    date: "1st August",
-    paymentStatus: "Paid",
-    paymentStatusBgColor: "bg-green-100",
-    paymentStatusTextColor: "text-green-400",
-    icon: <BookingComSVG />,
-  },
-  {
-    statusColor: "#E91E63",
-    title: "Beach Resort in Ibiza",
-    date: "5th - 10th August",
-    paymentStatus: "Unpaid",
-    paymentStatusBgColor: "bg-yellow-100",
-    paymentStatusTextColor: "text-yellow-400",
-    icon: <BookingComSVG />,
-  },
-];
-
-const TripSummary: React.FC = () => {
+const TripSummary: React.FC<TripSummaryProps> = ({ open, setOpen }) => {
   return (
-    <Sheet>
-      <SheetTrigger>
-        <div>
-          Current Trip Cost: $1500s
-          <div className="flex gap-2 text-sm items-center">
-            <SuitcaseSVG />3 items added to trip
-          </div>
-        </div>
-      </SheetTrigger>
-      <SheetContent className="min-w-[500px] ">
-        <SheetHeader>
-          <SheetTitle>Trip Summary</SheetTitle>
-        </SheetHeader>
-        <Table>
-          <TableHeader>
-            <TableRow className="border-none">
-              <TableHead></TableHead>
-              <TableHead>Description</TableHead>
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger></SheetTrigger>
+      <SheetContent className="min-w-[500px] rounded-l-2xl">
+        {dummydata.map((trip, tripIndex) => (
+          <div key={tripIndex} className="space-y-2">
+            <SheetHeader>
+              <div>
+                <SheetTitle>{trip.name}</SheetTitle>
+                <div className="text-[10px] mt-[-3px] text-slate-500">
+                  ID {trip.id}
+                </div>
+              </div>
+            </SheetHeader>
+            <div className="flex gap-2 text-sm">
+              <p>{trip.start_date} -</p>
+              <p> {trip.end_date}</p>
+            </div>
 
-              <TableHead>Dates</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Provider</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {tableRows.map((row, index) => (
-              <TableRow key={index} className="text-muted-foreground text-xs">
-                <TableCell className="font-medium">
-                  <div
-                    className="w-3 h-3 rounded-full cursor-pointer"
-                    style={{ backgroundColor: row.statusColor }}
-                  />
-                </TableCell>
-                <TableCell>{row.title}</TableCell>
-                <TableCell>{row.date}</TableCell>
-                <TableCell>
-                  <div
-                    className={`w-max p-1 rounded-lg mx-auto ${row.paymentStatusBgColor} ${row.paymentStatusTextColor}`}
-                  >
-                    {row.paymentStatus}
-                  </div>
-                </TableCell>
-                <TableCell>
-                  <div className="flex justify-center">{row.icon}</div>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        <div className="mt-4">Total Cost: $1200 || Edit Trip Details</div>
+            <Separator />
+
+            <Accordion type="single" collapsible className="w-full">
+              {trip.bookings.map((booking, bookingIndex) => (
+                <AccordionItem
+                className="relative"
+                  key={bookingIndex}
+                  value={`item-${bookingIndex}`}
+                >
+                  {/* <div className="absolute w-2 h-full left-[-10px] border-l-2 border-dotted border-gray-300" /> */}
+                  <AccordionTrigger className="text-sm py-2">
+                    {booking.name}
+                  </AccordionTrigger>
+                  <AccordionContent className="relative">
+                   
+                    <p>
+                      <strong>Location:</strong> {booking.location}
+                    </p>
+                    <p>
+                      <strong>Provider:</strong> {booking.provider}
+                    </p>
+                    <p>
+                      <strong>Paid:</strong> {booking.paid ? "Yes" : "No"}
+                    </p>
+                    <div className="flex gap-1 absolute top-0 right-0">
+                      <Edit2 className="w-4 h-4 text-slate-400"/>
+                      <File className="w-4 h-4 text-slate-400"/>
+
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+            <div className="mt-4">
+              <p>Trip Cost ${trip.cost}</p>
+              <p className="text-xs">Unpaid total in trip $359.49</p>
+            </div>
+          </div>
+        ))}
+        <SheetFooter></SheetFooter>
       </SheetContent>
     </Sheet>
   );
