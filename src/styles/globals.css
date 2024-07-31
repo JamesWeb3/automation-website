@@ -84,4 +84,8 @@
       0px 12px 12px -6px #0E3F7E08,
       0px 24px 24px -12px #0E3F7E10;
   }
+
+  .transition-ease {
+    @apply transition duration-200 ease-in-out;
+}
   

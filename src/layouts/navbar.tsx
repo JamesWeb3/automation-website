@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 
 import { AuthDialogIndex } from "@/components/auth";
 import { useAuthModal } from "@/contexts/AuthContext";
+import { PreferenceModal } from "@/components/preference-modal";
 //
 const Navbar: React.FC = () => {
   const { openModal } = useAuthModal();
@@ -12,6 +13,7 @@ const Navbar: React.FC = () => {
       <div>Logo</div>
 
       <div className="flex items-center gap-6">
+        <PreferenceModal />
         <p
           onClick={() => {
             openModal("login");
