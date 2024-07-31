@@ -12,7 +12,6 @@ import { Label } from "../ui/label";
 
 const CountrySearch: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [dialogOpen, setDialogOpen] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState<string>("");
   const [cityCountryList, setCityCountryList] = useState<string[]>(() => {
     return countryData.countries.flatMap((country) =>
@@ -22,32 +21,33 @@ const CountrySearch: React.FC = () => {
 
   const handleInputFocus = () => setIsOpen(true);
 
-  const handleInputBlur = () => {
-    // Delay closing to allow click event to register
-    setTimeout(() => setIsOpen(false), 200);
+  const handleLocationClick = (location: string) => {
+    setSelectedLocation(location);
+    setIsOpen(false);
   };
 
-  const handleLocationClick = (location: string) => {
-    console.log(location);
-    setSelectedLocation(location);
-    setDialogOpen(true);
+  const handleInputBlur = () => {
+    // Delay the close to allow click event to register
+    setTimeout(() => setIsOpen(false), 100);
   };
 
   return (
-    <div className="z-20 w-full">
+    <div className="w-full">
       <Command>
-      <Label className="ml-3 mb-[-5px]">Where To</Label>
+        <Label className="ml-3 mb-[-5px]">Where To</Label>
         <CommandInput
+          value={selectedLocation}
           placeholder="Select a country"
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
+          onValueChange={(value: string) => setSelectedLocation(value)}
         />
         {isOpen && (
-          <CommandList className="">
+          <CommandList className="bg-green-100">
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup
               heading="Search Location"
-              className="z-20 absolute overflow-auto w-[600px] h-96 rounded-md"
+              className="z-20 absolute overflow-auto w-[600px] h-96 rounded-md bg-white"
             >
               {cityCountryList.map((location, index) => (
                 <CommandItem

@@ -2,13 +2,8 @@ import React, { useState } from "react";
 import currencies from "@/data/currencies.json";
 import {
   Command,
-  CommandEmpty,
-  CommandGroup,
   CommandInput,
-  CommandItem,
   CommandList,
-  CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command";
 import { ScrollArea } from "../ui/scroll-area";
 
