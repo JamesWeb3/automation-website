@@ -97,10 +97,10 @@ const TripSummary: React.FC<TripSummaryProps> = ({
         )}
         <SheetFooter>
         <div >
-              <p>Trip Cost ${selectedDeal.price}</p>
+              <p>Trip Cost $2k</p>
               <p className="text-xs">Unpaid total in trip $359.49</p>
             </div>
-            <Button>Book Trip (${selectedDeal.price})</Button>
+            <Button>Book Trip $2,000</Button>
         </SheetFooter>
       </SheetContent>
     </Sheet>
