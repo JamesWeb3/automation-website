@@ -14,6 +14,7 @@
         "location": "JFK International Airport",
         "provider": "Air France",
         "paid": true
+        
       },
       {
         "type": "accomodation",

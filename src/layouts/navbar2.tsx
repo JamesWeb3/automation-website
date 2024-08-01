@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 import { DropdownMenuSVG } from "@/components/ui/icons";
 import { AuthDialogIndex } from "@/components/auth";
-import TripSummary from "@/components/trip-summary";
+import TripSummary from "@/components/trip-summary-component";
 import { useTripContext } from "@/contexts/TripContext";
 
 interface NavBarProps {

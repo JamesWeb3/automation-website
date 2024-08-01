@@ -10,17 +10,11 @@ import {
 import DealsData from "@/data/test-deal-data.json";
 import Image from "next/image";
 import { PlaneIcon, TrainIcon, BedIcon } from "lucide-react";
-import TripSummary from "./trip-summary";
-import { useState } from "react";
+import { useRouter } from "next/router";
 
 export function DealsCarousel() {
-  const [open, setOpen] = useState(false);
-  const [selectedDeal, setSelectedDeal] = useState(null);
+  const router = useRouter();
 
-  const handleDealSummaryOpen = (deal: any) => {
-    setSelectedDeal(deal);
-    setOpen(true);
-  };
   return (
     <>
       <Carousel className="w-full">
@@ -31,7 +25,7 @@ export function DealsCarousel() {
               className="pl-4 md:basis-1/2 lg:basis-1/3"
             >
               <div
-                onClick={() => handleDealSummaryOpen(deal)}
+                onClick={() => router.push(`/deals/${deal.id}`)}
                 className="bg-white rounded-xl border-[1.5px] border-transparent hover:border-black/50 transition ease-in-out duration-200 cursor-pointer"
               >
                 <Image
@@ -65,7 +59,6 @@ export function DealsCarousel() {
         <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200 transition ease-in-out duration-200" />
         <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200 transition ease-in-out duration-200" />
       </Carousel>
-      <TripSummary open={open} setOpen={setOpen} selectedDeal={selectedDeal} />
     </>
   );
 }

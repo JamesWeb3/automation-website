@@ -4,11 +4,11 @@ import SearchBar from "@/components/search-bar";
 import { DealsCarousel } from "@/components/deals-carousel";
 import Logo from "../../public/travallr_logo.png";
 import Image from "next/image";
-
+import { MainLayout } from "@/layouts/main-layout";
 
 const HomePage: React.FC = () => {
   return (
-    <main className="flex flex-col h-screen p-6 items-center overflow-hidden">
+    <MainLayout>
       <Navbar />
 
       <div className="flex flex-col gap-4 items-center gap- mt-12">
@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
         <DealsCarousel />
       </div>
       <AuthDialogIndex />
-    </main>
+    </MainLayout>
   );
 };
 
