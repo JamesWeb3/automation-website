@@ -7,11 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { FlightsIcon } from "@/components/ui/services/flights";
-import { AccomodationIcon } from "@/components/ui/services/accomodation";
-import { FoodIcon } from "@/components/ui/services/food";
-import { ActivityIcon } from "../ui/services/activity";
-import { TransportIcon } from "@/components/ui/services/transport";
+import { ServiceIcon } from "@/components/ui/service-icons";
 
 const StartSearch: React.FC = () => {
   return (
@@ -23,33 +19,33 @@ const StartSearch: React.FC = () => {
         <SelectGroup>
           <SelectItem value="flights">
             <div className="flex flex-row items-center gap-2">
-              <FlightsIcon />
+              <ServiceIcon type="flights" />
               Book Flights
             </div>
           </SelectItem>
           <SelectItem value="accomodation">
             <div className="flex flex-row items-center gap-2">
-              <AccomodationIcon />
+            <ServiceIcon type="accomodation" />
               Book Accomodation
             </div>
           </SelectItem>
           <SelectItem value="transport">
           
             <div className="flex flex-row items-center gap-2">
-            <TransportIcon />
+            <ServiceIcon type="transport" />
               Book Transport
             </div>
           </SelectItem>
-          <SelectItem value="activities">
+          <SelectItem value="activity">
             {" "}
             <div className="flex flex-row items-center gap-2">
-            <ActivityIcon />
+            <ServiceIcon type="activity" />
               Book Activity
             </div>
           </SelectItem>
           <SelectItem value="Food">
             <div className="flex flex-row items-center gap-2">
-              <FoodIcon />
+            <ServiceIcon type="food" />
               Book Resturaunt
             </div>
           </SelectItem>

@@ -39,7 +39,7 @@ const Navbar2: React.FC<NavBarProps> = ({ open, setOpen }) => {
 
   return (
     <nav className="flex justify-between items-center w-full">
-      <TripSummary open={open} setOpen={setOpen} />
+      <TripSummary selectedDeal={null} open={open} setOpen={setOpen} />
 
       <div className="flex items-center gap-6 cursor-pointer">
         <p

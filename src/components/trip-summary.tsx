@@ -15,6 +15,8 @@ import {
 import { Separator } from "./ui/separator";
 import { Edit2, File } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { ServiceIcon } from "./ui/service-icons";
 
 interface TripSummaryProps {
   open: boolean;
@@ -30,7 +32,7 @@ const TripSummary: React.FC<TripSummaryProps> = ({
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger></SheetTrigger>
-      <SheetContent className="min-w-[500px] rounded-l-2xl">
+      <SheetContent className="min-w-[500px] rounded-l-2xl pb-20">
         {selectedDeal ? (
           <div className="flex flex-col justify-between h-full">
             <SheetHeader>
@@ -41,6 +43,14 @@ const TripSummary: React.FC<TripSummaryProps> = ({
                 </div>
               </div>
             </SheetHeader>
+            <div className="h-60 w-full">
+              <Image
+                width={300}
+                height={200}
+                src={selectedDeal.thumbnail}
+                alt={selectedDeal.name}
+              />
+            </div>
             <div className="flex gap-2 text-sm">
               <p>{selectedDeal.start_date} -</p>
               <p> {selectedDeal.end_date}</p>
@@ -56,8 +66,11 @@ const TripSummary: React.FC<TripSummaryProps> = ({
                   value={`item-${bookingIndex}`}
                 >
                   <AccordionTrigger className="text-sm py-2">
-                    {booking.type}
-                    {booking.name}
+                    <div className="flex items-center gap-4">
+                      <ServiceIcon type={booking.type} />
+
+                      {booking.name}
+                    </div>
                   </AccordionTrigger>
                   <AccordionContent className="relative">
                     <p>
@@ -77,16 +90,18 @@ const TripSummary: React.FC<TripSummaryProps> = ({
                 </AccordionItem>
               ))}
             </Accordion>
-            <div className="mt-4">
-              <p>Trip Cost ${selectedDeal.price}</p>
-              <p className="text-xs">Unpaid total in trip $359.49</p>
-            </div>
-            <Button>Book Trip (${selectedDeal.price})</Button>
+           
           </div>
         ) : (
           <div>Loading...</div>
         )}
-        <SheetFooter></SheetFooter>
+        <SheetFooter>
+        <div >
+              <p>Trip Cost ${selectedDeal.price}</p>
+              <p className="text-xs">Unpaid total in trip $359.49</p>
+            </div>
+            <Button>Book Trip (${selectedDeal.price})</Button>
+        </SheetFooter>
       </SheetContent>
     </Sheet>
   );

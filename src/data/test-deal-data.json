@@ -9,49 +9,49 @@
     "price": "$1200",
     "bookings": [
       {
-        "type": "Flights",
+        "type": "flights",
         "name": "New York to Paris",
         "location": "JFK International Airport",
         "provider": "Air France",
         "paid": true
       },
       {
-        "type": "Accomodation",
+        "type": "accomodation",
         "name": "Eiffel Tower View Hotel",
         "location": "Paris",
         "provider": "Parisian Suites",
         "paid": true
       },
       {
-        "type": "Activities",
+        "type": "activity",
         "name": "Louvre Museum Tour",
         "location": "Paris",
         "provider": "Paris Tours",
         "paid": true
       },
       {
-        "type": "Transport",
+        "type": "transport",
         "name": "Paris Metro Pass",
         "location": "Paris",
         "provider": "Paris Metro",
         "paid": true
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Dinner at Le Jules Verne",
         "location": "Paris",
         "provider": "Le Jules Verne Restaurant",
         "paid": true
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Lunch at Café de Flore",
         "location": "Paris",
         "provider": "Café de Flore",
         "paid": false
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Breakfast at Hotel",
         "location": "Eiffel Tower View Hotel",
         "provider": "Parisian Suites",
@@ -69,21 +69,21 @@
     "price": "$1100",
     "bookings": [
       {
-        "type": "Flights",
+        "type": "flights",
         "name": "Los Angeles to San Francisco",
         "location": "LAX International Airport",
         "provider": "United Airlines",
         "paid": true
       },
       {
-        "type": "Accomodation",
+        "type": "accomodation",
         "name": "Golden Gate Hotel",
         "location": "San Francisco",
         "provider": "SF Hotels",
         "paid": true
       },
       {
-        "type": "Activities",
+        "type": "activity",
         "name": "Alcatraz Island Tour",
         "location": "San Francisco",
         "provider": "San Francisco Tours",
