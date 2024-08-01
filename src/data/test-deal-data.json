@@ -1,0 +1,263 @@
+[
+  {
+    "id": "2512-1315-2049-0183",
+    "name": "Trip to Paris",
+    "thumbnail": "/backgrounds/paris.png",
+    "start_date": "10th September",
+    "location": "Paris",
+    "end_date": "20th September, 2024",
+    "price": "$1200",
+    "bookings": [
+      {
+        "type": "Flights",
+        "name": "New York to Paris",
+        "location": "JFK International Airport",
+        "provider": "Air France",
+        "paid": true
+      },
+      {
+        "type": "Accomodation",
+        "name": "Eiffel Tower View Hotel",
+        "location": "Paris",
+        "provider": "Parisian Suites",
+        "paid": true
+      },
+      {
+        "type": "Activities",
+        "name": "Louvre Museum Tour",
+        "location": "Paris",
+        "provider": "Paris Tours",
+        "paid": true
+      },
+      {
+        "type": "Transport",
+        "name": "Paris Metro Pass",
+        "location": "Paris",
+        "provider": "Paris Metro",
+        "paid": true
+      },
+      {
+        "type": "Food",
+        "name": "Dinner at Le Jules Verne",
+        "location": "Paris",
+        "provider": "Le Jules Verne Restaurant",
+        "paid": true
+      },
+      {
+        "type": "Food",
+        "name": "Lunch at Café de Flore",
+        "location": "Paris",
+        "provider": "Café de Flore",
+        "paid": false
+      },
+      {
+        "type": "Food",
+        "name": "Breakfast at Hotel",
+        "location": "Eiffel Tower View Hotel",
+        "provider": "Parisian Suites",
+        "paid": true
+      }
+    ]
+  },
+  {
+    "id": "2512-1315-2049-0184",
+    "name": "Trip to San Francisco",
+    "thumbnail": "/backgrounds/sanfran.jpg",
+    "start_date": "5th October",
+    "location": "San Francisco, Napa Valley",
+    "end_date": "15th October, 2024",
+    "price": "$1100",
+    "bookings": [
+      {
+        "type": "Flights",
+        "name": "Los Angeles to San Francisco",
+        "location": "LAX International Airport",
+        "provider": "United Airlines",
+        "paid": true
+      },
+      {
+        "type": "Accomodation",
+        "name": "Golden Gate Hotel",
+        "location": "San Francisco",
+        "provider": "SF Hotels",
+        "paid": true
+      },
+      {
+        "type": "Activities",
+        "name": "Alcatraz Island Tour",
+        "location": "San Francisco",
+        "provider": "San Francisco Tours",
+        "paid": true
+      },
+      {
+        "type": "Transport",
+        "name": "Car Rental",
+        "location": "San Francisco Airport",
+        "provider": "Enterprise",
+        "paid": true
+      },
+      {
+        "type": "Activities",
+        "name": "Wine Tasting in Napa Valley",
+        "location": "Napa Valley",
+        "provider": "Napa Tours",
+        "paid": false
+      },
+      {
+        "type": "Food",
+        "name": "Dinner at The Slanted Door",
+        "location": "San Francisco",
+        "provider": "The Slanted Door",
+        "paid": true
+      },
+      {
+        "type": "Food",
+        "name": "Lunch at Fisherman's Wharf",
+        "location": "San Francisco",
+        "provider": "Local Eatery",
+        "paid": false
+      },
+      {
+        "type": "Food",
+        "name": "Breakfast at Hotel",
+        "location": "Golden Gate Hotel",
+        "provider": "SF Hotels",
+        "paid": true
+      }
+    ]
+  },
+  {
+    "id": "2512-1315-2049-0185",
+    "name": "Trip to Switzerland",
+    "thumbnail": "/backgrounds/switzerland.jpg",
+    "start_date": "1st November",
+    "location": "Zurich, Lucerne, Interlaken",
+    "end_date": "15th November, 2024",
+    "price": "$1500",
+    "bookings": [
+      {
+        "type": "Flights",
+        "name": "London to Zurich",
+        "location": "Heathrow Airport",
+        "provider": "Swiss International Air Lines",
+        "paid": true
+      },
+      {
+        "type": "Accomodation",
+        "name": "Zurich City Hotel",
+        "location": "Zurich",
+        "provider": "Zurich Inns",
+        "paid": true
+      },
+      {
+        "type": "Activities",
+        "name": "Lake Lucerne Boat Tour",
+        "location": "Lucerne",
+        "provider": "Lucerne Tours",
+        "paid": true
+      },
+      {
+        "type": "Transport",
+        "name": "Swiss Travel Pass",
+        "location": "Zurich",
+        "provider": "Swiss Railways",
+        "paid": true
+      },
+      {
+        "type": "Activities",
+        "name": "Jungfraujoch Excursion",
+        "location": "Interlaken",
+        "provider": "Interlaken Tours",
+        "paid": false
+      },
+      {
+        "type": "Food",
+        "name": "Dinner at Restaurant Kronenhalle",
+        "location": "Zurich",
+        "provider": "Restaurant Kronenhalle",
+        "paid": true
+      },
+      {
+        "type": "Food",
+        "name": "Lunch at Swiss Chalet",
+        "location": "Lucerne",
+        "provider": "Swiss Chalet",
+        "paid": false
+      },
+      {
+        "type": "Food",
+        "name": "Breakfast at Hotel",
+        "location": "Zurich City Hotel",
+        "provider": "Zurich Inns",
+        "paid": true
+      }
+    ]
+  },
+  {
+    "id": "2512-1315-2049-0186",
+    "name": "Trip to Turkey",
+    "thumbnail": "/backgrounds/turkey.jpg",
+    "start_date": "20th December",
+    "location": "Istanbul, Cappadocia, Pamukkale",
+    "end_date": "5th January, 2025",
+    "price": "$1300",
+    "bookings": [
+      {
+        "type": "Flights",
+        "name": "Dubai to Istanbul",
+        "location": "Dubai International Airport",
+        "provider": "Turkish Airlines",
+        "paid": true
+      },
+      {
+        "type": "Accomodation",
+        "name": "Istanbul Palace Hotel",
+        "location": "Istanbul",
+        "provider": "Istanbul Hotels",
+        "paid": true
+      },
+      {
+        "type": "Activities",
+        "name": "Bosphorus Cruise",
+        "location": "Istanbul",
+        "provider": "Istanbul Tours",
+        "paid": true
+      },
+      {
+        "type": "Transport",
+        "name": "Domestic Flights",
+        "location": "Istanbul",
+        "provider": "Turkish Airlines",
+        "paid": true
+      },
+      {
+        "type": "Activities",
+        "name": "Hot Air Balloon Ride in Cappadocia",
+        "location": "Cappadocia",
+        "provider": "Cappadocia Balloons",
+        "paid": false
+      },
+      {
+        "type": "Food",
+        "name": "Dinner at Mikla",
+        "location": "Istanbul",
+        "provider": "Mikla Restaurant",
+        "paid": true
+      },
+      {
+        "type": "Food",
+        "name": "Lunch at Café Pera",
+        "location": "Istanbul",
+        "provider": "Café Pera",
+        "paid": false
+      },
+      {
+        "type": "Food",
+        "name": "Breakfast at Hotel",
+        "location": "Istanbul Palace Hotel",
+        "provider": "Istanbul Hotels",
+        "paid": true
+      }
+    ]
+  }
+]

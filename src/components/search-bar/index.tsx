@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { Form } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { Button } from "../ui/button";
 
 const FormSchema = z.object({
   country: z.string().nonempty(),
@@ -25,19 +26,21 @@ const SearchBar: React.FC = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div className="bg-white flex items-center p-2 w-full border rounded-full">
-          <CountrySearch  />
-          <div className="w-0.5 h-full bg-red-100" />
-          <DateSearch form={form}/>
-          <div className="w-0.5 h-full bg-red-100" />
-          <StartSearch  />
-          <button
-            type="submit"
-            className="bg-black w-10 h-10 flex items-center justify-center rounded-full p-1 cursor-pointer hover:bg-black/80 transition-ease"
-          >
-            <Send className="text-white w-5 h-5" />
-          </button>
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="flex gap-2 items-center p-1 border-2 border-muted-foreground rounded-full w-[650px]">
+          <CountrySearch />
+          <div className="w-0.5 h-12 bg-muted-foreground" />
+          <DateSearch form={form} />
+          <div className="w-0.5 h-12 bg-muted-foreground" />
+          <StartSearch />
+          <div>
+            <Button
+              type="submit"
+              className="bg-black w-12 h-12 rounded-full p-1 hover:bg-black/80 transition-ease"
+            >
+              <Send className="text-white w-5 h-5" />
+            </Button>
+          </div>
         </div>
       </form>
     </Form>

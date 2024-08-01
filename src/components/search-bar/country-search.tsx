@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   Command,
   CommandEmpty,
@@ -19,6 +19,8 @@ const CountrySearch: React.FC = () => {
     );
   });
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const handleInputFocus = () => setIsOpen(true);
 
   const handleLocationClick = (location: string) => {
@@ -31,11 +33,19 @@ const CountrySearch: React.FC = () => {
     setTimeout(() => setIsOpen(false), 100);
   };
 
+  const handleParentClick = () => {
+    inputRef.current?.focus();
+  };
+
   return (
-    <div className="w-full">
+    <div
+      className="w-full hover:bg-muted cursor-pointer rounded-l-full p-1"
+      onClick={handleParentClick}
+    >
       <Command>
-        <Label className="ml-3 mb-[-5px]">Where To</Label>
+        <Label className="ml-3 mb-[-3px] mt-1">Where To</Label>
         <CommandInput
+          ref={inputRef}
           value={selectedLocation}
           placeholder="Select a country"
           onFocus={handleInputFocus}

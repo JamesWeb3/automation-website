@@ -13,48 +13,53 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Separator } from "./ui/separator";
-import dummydata from "@/data/dummy-trip-data.json";
 import { Edit2, File } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 interface TripSummaryProps {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  selectedDeal: any;
 }
 
-const TripSummary: React.FC<TripSummaryProps> = ({ open, setOpen }) => {
+const TripSummary: React.FC<TripSummaryProps> = ({
+  open,
+  setOpen,
+  selectedDeal,
+}) => {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger></SheetTrigger>
       <SheetContent className="min-w-[500px] rounded-l-2xl">
-        {dummydata.map((trip, tripIndex) => (
-          <div key={tripIndex} className="space-y-2">
+        {selectedDeal ? (
+          <div className="flex flex-col justify-between h-full">
             <SheetHeader>
               <div>
-                <SheetTitle>{trip.name}</SheetTitle>
+                <SheetTitle>{selectedDeal.name}</SheetTitle>
                 <div className="text-[10px] mt-[-3px] text-slate-500">
-                  ID {trip.id}
+                  ID {selectedDeal.id}
                 </div>
               </div>
             </SheetHeader>
             <div className="flex gap-2 text-sm">
-              <p>{trip.start_date} -</p>
-              <p> {trip.end_date}</p>
+              <p>{selectedDeal.start_date} -</p>
+              <p> {selectedDeal.end_date}</p>
             </div>
 
             <Separator />
 
             <Accordion type="single" collapsible className="w-full">
-              {trip.bookings.map((booking, bookingIndex) => (
+              {selectedDeal.bookings.map((booking: any, bookingIndex: any) => (
                 <AccordionItem
-                className="relative"
+                  className="relative"
                   key={bookingIndex}
                   value={`item-${bookingIndex}`}
                 >
-                  {/* <div className="absolute w-2 h-full left-[-10px] border-l-2 border-dotted border-gray-300" /> */}
                   <AccordionTrigger className="text-sm py-2">
+                    {booking.type}
                     {booking.name}
                   </AccordionTrigger>
                   <AccordionContent className="relative">
-                   
                     <p>
                       <strong>Location:</strong> {booking.location}
                     </p>
@@ -65,20 +70,22 @@ const TripSummary: React.FC<TripSummaryProps> = ({ open, setOpen }) => {
                       <strong>Paid:</strong> {booking.paid ? "Yes" : "No"}
                     </p>
                     <div className="flex gap-1 absolute top-0 right-0">
-                      <Edit2 className="w-4 h-4 text-slate-400"/>
-                      <File className="w-4 h-4 text-slate-400"/>
-
+                      <Edit2 className="w-4 h-4 text-slate-400" />
+                      <File className="w-4 h-4 text-slate-400" />
                     </div>
                   </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
             <div className="mt-4">
-              <p>Trip Cost ${trip.cost}</p>
+              <p>Trip Cost ${selectedDeal.price}</p>
               <p className="text-xs">Unpaid total in trip $359.49</p>
             </div>
+            <Button>Book Trip (${selectedDeal.price})</Button>
           </div>
-        ))}
+        ) : (
+          <div>Loading...</div>
+        )}
         <SheetFooter></SheetFooter>
       </SheetContent>
     </Sheet>

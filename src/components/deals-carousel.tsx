@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import DealsData from "@/data/deals.json";
+import DealsData from "@/data/test-deal-data.json";
 import Image from "next/image";
 import { PlaneIcon, TrainIcon, BedIcon } from "lucide-react";
 import TripSummary from "./trip-summary";
@@ -15,8 +15,10 @@ import { useState } from "react";
 
 export function DealsCarousel() {
   const [open, setOpen] = useState(false);
+  const [selectedDeal, setSelectedDeal] = useState(null);
 
-  const handleDealSummaryOpen = () => {
+  const handleDealSummaryOpen = (deal: any) => {
+    setSelectedDeal(deal);
     setOpen(true);
   };
   return (
@@ -29,14 +31,14 @@ export function DealsCarousel() {
               className="pl-4 md:basis-1/2 lg:basis-1/3"
             >
               <div
-                onClick={handleDealSummaryOpen}
+                onClick={() => handleDealSummaryOpen(deal)}
                 className="bg-white rounded-xl border-[1.5px] border-transparent hover:border-black/50 transition ease-in-out duration-200 cursor-pointer"
               >
                 <Image
                   width={600}
                   height={300}
-                  src={deal.image}
-                  alt={deal.title}
+                  src={deal.thumbnail}
+                  alt={deal.name}
                   className="w-full h-48 object-cover rounded-t-xl"
                 />
 
@@ -44,7 +46,7 @@ export function DealsCarousel() {
                   <p className="text-xs text-foreground font-medium">
                     {deal.location}
                   </p>
-                  <p className="text-sm font-medium">{deal.title}</p>
+                  <p className="text-sm font-medium">{deal.name}</p>
 
                   <div className="flex items-center justify-between">
                     <p className="mt-4 text-xl font-semibold">{deal.price}</p>
@@ -63,7 +65,7 @@ export function DealsCarousel() {
         <CarouselPrevious className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200 transition ease-in-out duration-200" />
         <CarouselNext className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg hover:bg-gray-200 transition ease-in-out duration-200" />
       </Carousel>
-      <TripSummary open={open} setOpen={setOpen} />
+      <TripSummary open={open} setOpen={setOpen} selectedDeal={selectedDeal} />
     </>
   );
 }

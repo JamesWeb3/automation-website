@@ -1,67 +1,61 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import countryData from "@/data/countries.json";
-import { Label } from "../ui/label";
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { FlightsIcon } from "@/components/ui/services/flights";
+import { AccomodationIcon } from "@/components/ui/services/accomodation";
+import { FoodIcon } from "@/components/ui/services/food";
+import { ActivityIcon } from "../ui/services/activity";
+import { TransportIcon } from "@/components/ui/services/transport";
 
 const StartSearch: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState<string>("");
-  const [cityCountryList, setCityCountryList] = useState<string[]>(() => {
-    return countryData.countries.flatMap((country) =>
-      country.cities.map((city) => `${city}, ${country.name}`)
-    );
-  });
-
-  const handleInputFocus = () => setIsOpen(true);
-
-  const handleInputBlur = () => {
-    // Delay closing to allow click event to register
-    setTimeout(() => setIsOpen(false), 200);
-  };
-
-  const handleLocationClick = (location: string) => {
-    console.log(location);
-    setSelectedLocation(location);
-    setDialogOpen(true);
-  };
-
   return (
-    <div className="z-20 w-full">
-      <Command>
-        <Label className="ml-3 mb-[-5px]">Where to Start</Label>
-        <CommandInput
-          placeholder="Add dates"
-          onFocus={handleInputFocus}
-          onBlur={handleInputBlur}
-        />
-        {isOpen && (
-          <CommandList className="">
-            <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup
-              heading="Where would you like to start"
-              className="z-20 absolute overflow-auto w-[600px] h-96 rounded-md"
-            >
-              {cityCountryList.map((location, index) => (
-                <CommandItem
-                  key={index}
-                  onClick={() => handleLocationClick(location)}
-                >
-                  {location}
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
-        )}
-      </Command>
-    </div>
+    <Select>
+      <SelectTrigger className="border-none hover:bg-muted transition-ease w-full">
+        <SelectValue placeholder="How to start" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectItem value="flights">
+            <div className="flex flex-row items-center gap-2">
+              <FlightsIcon />
+              Book Flights
+            </div>
+          </SelectItem>
+          <SelectItem value="accomodation">
+            <div className="flex flex-row items-center gap-2">
+              <AccomodationIcon />
+              Book Accomodation
+            </div>
+          </SelectItem>
+          <SelectItem value="transport">
+          
+            <div className="flex flex-row items-center gap-2">
+            <TransportIcon />
+              Book Transport
+            </div>
+          </SelectItem>
+          <SelectItem value="activities">
+            {" "}
+            <div className="flex flex-row items-center gap-2">
+            <ActivityIcon />
+              Book Activity
+            </div>
+          </SelectItem>
+          <SelectItem value="Food">
+            <div className="flex flex-row items-center gap-2">
+              <FoodIcon />
+              Book Resturaunt
+            </div>
+          </SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 };
 
