@@ -60,7 +60,7 @@ const DropdownMenuComponent: React.FC = () => {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <User className="mr-2 h-4 w-4" />
-            <span>My Trips</span>
+            <span>My Itinerary</span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => router.push("/settings")}>
             <Settings className="mr-2 h-4 w-4" />

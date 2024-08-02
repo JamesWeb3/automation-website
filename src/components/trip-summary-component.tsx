@@ -115,10 +115,10 @@ const TripSummary: React.FC<TripSummaryProps> = ({ trip }) => {
 
       <div className="flex w-full justify-between gap-4">
         <Button variant="outline" className="w-full">
-          Im Gay
+          Confirm & Pay Now ($2,499 USD)
         </Button>
         <Button onClick={handleClone} className="w-full">
-          Clone Trip
+         Use & Edit Trip
         </Button>
       </div>
     </div>
