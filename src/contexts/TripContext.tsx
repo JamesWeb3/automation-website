@@ -11,6 +11,7 @@ import { Trip } from "@/types/types"; // Ensure your types file is correct
 interface TripContextProps {
   trip: Trip | undefined;
   loading: boolean;
+  id: string | undefined;
 }
 
 const TripContext = createContext<TripContextProps | undefined>(undefined);
@@ -47,7 +48,7 @@ export const TripProvider = ({ children, trips }: TripProviderProps) => {
   }, [id, trips]);
 
   return (
-    <TripContext.Provider value={{ trip, loading }}>
+    <TripContext.Provider value={{ trip, loading, id }}>
       {children}
     </TripContext.Provider>
   );

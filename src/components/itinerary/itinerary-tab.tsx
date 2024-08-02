@@ -89,7 +89,7 @@ export const ItineraryTab: React.FC = () => {
         </TabsContent>
 
         <TabsContent value="draft">
-          <Carousel className="w-max">
+          <Carousel>
             <CarouselContent className="flex flex-col gap-3">
               {DealData.map((deal, index) => (
                 <CarouselItem className="cursor-pointer opacity-40" key={index}>
