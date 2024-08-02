@@ -102,6 +102,10 @@ const DropdownMenuComponent: React.FC = () => {
           <Cloud className="mr-2 h-4 w-4" />
           <span>API</span>
         </DropdownMenuItem>
+        <DropdownMenuItem disabled>
+          <Cloud className="mr-2 h-4 w-4" />
+          <span>Email History</span>
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <LogOut className="mr-2 h-4 w-4" />
