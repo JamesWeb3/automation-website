@@ -28,7 +28,7 @@ export const ItineraryTab: React.FC = () => {
 
   return (
     <ScrollArea className="flex h-[80vh]">
-      <Tabs>
+      <Tabs defaultValue="upcoming">
         <TabsList className="flex w-full gap-3 bg-black rounded-lg p-1">
           <TabsTrigger
             className="text-white border border-white/40  font-medium rounded-md"

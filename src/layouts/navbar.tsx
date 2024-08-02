@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
       <div className="flex items-center gap-6">
         <PreferenceModal />
         <Link href="/">Home</Link>
-        <Link href="/trip-itinerary">My Trips</Link>
+        <Link href="/my-trips">My Trips</Link>
         <Link href="/deals">Deals</Link>
         <DropdownMenuComponent />
       </div>

@@ -12,6 +12,7 @@ import { PrintItinerary } from "./print-itineray-dialog";
 import { ScrollArea } from "./ui/scroll-area";
 import { useToast } from "@/components/ui/use-toast";
 import { useTripContext } from "@/contexts/TripContext";
+import { useEffect } from "react";
 
 const TripSummary: React.FC = ({}) => {
   const { toast } = useToast();
@@ -24,6 +25,10 @@ const TripSummary: React.FC = ({}) => {
     });
     // router.push(`/trip}`);
   };
+
+    useEffect(() => {
+    console.log("CONSOLE", trip);
+  }, [trip]);
 
   if (!trip) {
     return <p>No trip found</p>;

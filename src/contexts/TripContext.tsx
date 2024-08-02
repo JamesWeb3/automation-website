@@ -33,7 +33,7 @@ export const TripProvider = ({ children, trips }: TripProviderProps) => {
   const router = useRouter();
   const [trip, setTrip] = useState<Trip | undefined>(undefined);
   const [loading, setLoading] = useState(true);
-  const id = router.query.Id as string | undefined;
+  const id = router.query.tripid || router.query.Id;
 
   useEffect(() => {
     console.log("id", id);
@@ -48,7 +48,7 @@ export const TripProvider = ({ children, trips }: TripProviderProps) => {
   }, [id, trips]);
 
   return (
-    <TripContext.Provider value={{ trip, loading, id }}>
+    <TripContext.Provider value={{ trip, loading, id: id?.toString() }}>
       {children}
     </TripContext.Provider>
   );

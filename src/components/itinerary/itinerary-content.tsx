@@ -14,10 +14,6 @@ import { Plus } from "lucide-react";
 export const ItineraryContent: React.FC = () => {
   const { trip, loading } = useTripContext();
 
-  useEffect(() => {
-    console.log("CONSOLE", trip);
-  }, [trip]);
-
   if (!trip) {
     return <p>click one of the trips in left column to load the data</p>;
   }
