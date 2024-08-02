@@ -19,46 +19,64 @@
         "booking_url": "https://www.airfrance.com"
       },
       {
-        "type": "accomodation",
+        "type": "accommodation",
         "name": "Eiffel Tower View Hotel",
         "location": "Paris",
         "provider": "Parisian Suites",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0183-0002",
+        "date": "10th Sep - 20th Sep",
+        "booking_url": "https://www.parisiansuites.com"
       },
       {
         "type": "activity",
         "name": "Louvre Museum Tour",
         "location": "Paris",
         "provider": "Paris Tours",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0183-0003",
+        "date": "12th Sep",
+        "booking_url": "https://www.paristours.com"
       },
       {
         "type": "transport",
         "name": "Paris Metro Pass",
         "location": "Paris",
         "provider": "Paris Metro",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0183-0004",
+        "date": "10th Sep - 20th Sep",
+        "booking_url": "https://www.parismetro.com"
       },
       {
         "type": "food",
         "name": "Dinner at Le Jules Verne",
         "location": "Paris",
         "provider": "Le Jules Verne Restaurant",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0183-0005",
+        "date": "15th Sep",
+        "booking_url": "https://www.lejulesverne.com"
       },
       {
         "type": "food",
         "name": "Lunch at Café de Flore",
         "location": "Paris",
         "provider": "Café de Flore",
-        "paid": false
+        "paid": false,
+        "id": "2512-1315-2049-0183-0006",
+        "date": "17th Sep",
+        "booking_url": "https://www.cafedeflore.com"
       },
       {
         "type": "food",
         "name": "Breakfast at Hotel",
         "location": "Eiffel Tower View Hotel",
         "provider": "Parisian Suites",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0183-0007",
+        "date": "11th Sep - 20th Sep",
+        "booking_url": "https://www.parisiansuites.com"
       }
     ]
   },
@@ -76,56 +94,80 @@
         "name": "Los Angeles to San Francisco",
         "location": "LAX International Airport",
         "provider": "United Airlines",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0184-0001",
+        "date": "5th Oct",
+        "booking_url": "https://www.united.com"
       },
       {
-        "type": "accomodation",
+        "type": "accommodation",
         "name": "Golden Gate Hotel",
         "location": "San Francisco",
         "provider": "SF Hotels",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0184-0002",
+        "date": "5th Oct - 15th Oct",
+        "booking_url": "https://www.sfhotels.com"
       },
       {
         "type": "activity",
         "name": "Alcatraz Island Tour",
         "location": "San Francisco",
         "provider": "San Francisco Tours",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0184-0003",
+        "date": "7th Oct",
+        "booking_url": "https://www.sftours.com"
       },
       {
-        "type": "Transport",
+        "type": "transport",
         "name": "Car Rental",
         "location": "San Francisco Airport",
         "provider": "Enterprise",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0184-0004",
+        "date": "5th Oct - 15th Oct",
+        "booking_url": "https://www.enterprise.com"
       },
       {
-        "type": "Activities",
+        "type": "activity",
         "name": "Wine Tasting in Napa Valley",
         "location": "Napa Valley",
         "provider": "Napa Tours",
-        "paid": false
+        "paid": false,
+        "id": "2512-1315-2049-0184-0005",
+        "date": "10th Oct",
+        "booking_url": "https://www.napatours.com"
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Dinner at The Slanted Door",
         "location": "San Francisco",
         "provider": "The Slanted Door",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0184-0006",
+        "date": "9th Oct",
+        "booking_url": "https://www.theslanteddoor.com"
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Lunch at Fisherman's Wharf",
         "location": "San Francisco",
         "provider": "Local Eatery",
-        "paid": false
+        "paid": false,
+        "id": "2512-1315-2049-0184-0007",
+        "date": "6th Oct",
+        "booking_url": "https://www.localeatery.com"
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Breakfast at Hotel",
         "location": "Golden Gate Hotel",
         "provider": "SF Hotels",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0184-0008",
+        "date": "6th Oct - 15th Oct",
+        "booking_url": "https://www.sfhotels.com"
       }
     ]
   },
@@ -139,60 +181,84 @@
     "price": "$1500",
     "bookings": [
       {
-        "type": "Flights",
+        "type": "flights",
         "name": "London to Zurich",
         "location": "Heathrow Airport",
         "provider": "Swiss International Air Lines",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0185-0001",
+        "date": "1st Nov",
+        "booking_url": "https://www.swiss.com"
       },
       {
-        "type": "Accomodation",
+        "type": "accommodation",
         "name": "Zurich City Hotel",
         "location": "Zurich",
         "provider": "Zurich Inns",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0185-0002",
+        "date": "1st Nov - 8th Nov",
+        "booking_url": "https://www.zurichinns.com"
       },
       {
-        "type": "Activities",
+        "type": "activity",
         "name": "Lake Lucerne Boat Tour",
         "location": "Lucerne",
         "provider": "Lucerne Tours",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0185-0003",
+        "date": "5th Nov",
+        "booking_url": "https://www.lucernetours.com"
       },
       {
-        "type": "Transport",
+        "type": "transport",
         "name": "Swiss Travel Pass",
         "location": "Zurich",
         "provider": "Swiss Railways",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0185-0004",
+        "date": "1st Nov - 15th Nov",
+        "booking_url": "https://www.swissrailways.com"
       },
       {
-        "type": "Activities",
+        "type": "activity",
         "name": "Jungfraujoch Excursion",
         "location": "Interlaken",
         "provider": "Interlaken Tours",
-        "paid": false
+        "paid": false,
+        "id": "2512-1315-2049-0185-0005",
+        "date": "12th Nov",
+        "booking_url": "https://www.interlakentours.com"
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Dinner at Restaurant Kronenhalle",
         "location": "Zurich",
         "provider": "Restaurant Kronenhalle",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0185-0006",
+        "date": "7th Nov",
+        "booking_url": "https://www.kronenhalle.com"
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Lunch at Swiss Chalet",
         "location": "Lucerne",
         "provider": "Swiss Chalet",
-        "paid": false
+        "paid": false,
+        "id": "2512-1315-2049-0185-0007",
+        "date": "6th Nov",
+        "booking_url": "https://www.swisschalet.com"
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Breakfast at Hotel",
         "location": "Zurich City Hotel",
         "provider": "Zurich Inns",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0185-0008",
+        "date": "2nd Nov - 8th Nov",
+        "booking_url": "https://www.zurichinns.com"
       }
     ]
   },
@@ -206,60 +272,84 @@
     "price": "$1300",
     "bookings": [
       {
-        "type": "Flights",
+        "type": "flights",
         "name": "Dubai to Istanbul",
         "location": "Dubai International Airport",
         "provider": "Turkish Airlines",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0186-0001",
+        "date": "20th Dec",
+        "booking_url": "https://www.turkishairlines.com"
       },
       {
-        "type": "Accomodation",
+        "type": "accommodation",
         "name": "Istanbul Palace Hotel",
         "location": "Istanbul",
         "provider": "Istanbul Hotels",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0186-0002",
+        "date": "20th Dec - 30th Dec",
+        "booking_url": "https://www.istanbulhotels.com"
       },
       {
-        "type": "Activities",
+        "type": "activity",
         "name": "Bosphorus Cruise",
         "location": "Istanbul",
         "provider": "Istanbul Tours",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0186-0003",
+        "date": "22nd Dec",
+        "booking_url": "https://www.istanbultours.com"
       },
       {
-        "type": "Transport",
+        "type": "transport",
         "name": "Domestic Flights",
         "location": "Istanbul",
         "provider": "Turkish Airlines",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0186-0004",
+        "date": "21st Dec - 5th Jan",
+        "booking_url": "https://www.turkishairlines.com"
       },
       {
-        "type": "Activities",
+        "type": "activity",
         "name": "Hot Air Balloon Ride in Cappadocia",
         "location": "Cappadocia",
         "provider": "Cappadocia Balloons",
-        "paid": false
+        "paid": false,
+        "id": "2512-1315-2049-0186-0005",
+        "date": "28th Dec",
+        "booking_url": "https://www.cappadociaballoons.com"
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Dinner at Mikla",
         "location": "Istanbul",
         "provider": "Mikla Restaurant",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0186-0006",
+        "date": "23rd Dec",
+        "booking_url": "https://www.mikla.com"
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Lunch at Café Pera",
         "location": "Istanbul",
         "provider": "Café Pera",
-        "paid": false
+        "paid": false,
+        "id": "2512-1315-2049-0186-0007",
+        "date": "24th Dec",
+        "booking_url": "https://www.cafepera.com"
       },
       {
-        "type": "Food",
+        "type": "food",
         "name": "Breakfast at Hotel",
         "location": "Istanbul Palace Hotel",
         "provider": "Istanbul Hotels",
-        "paid": true
+        "paid": true,
+        "id": "2512-1315-2049-0186-0008",
+        "date": "21st Dec - 30th Dec",
+        "booking_url": "https://www.istanbulhotels.com"
       }
     ]
   }

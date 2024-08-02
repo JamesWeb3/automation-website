@@ -4,24 +4,22 @@ import { AuthDialogIndex } from "@/components/auth";
 import { useAuthModal } from "@/contexts/AuthContext";
 import { PreferenceModal } from "@/components/preference-modal";
 import DropdownMenuComponent from "@/components/dropdown-menu";
-
+import Logo from "../../public/travallr_logo.png";
+import Image from "next/image";
+import Link from "next/link";
 const Navbar: React.FC = () => {
   const { openModal } = useAuthModal();
 
   return (
     <nav className="flex justify-between items-center w-full">
-      <div>Logo</div>
+      <Image width={80} src={Logo} alt="logo" />
 
       <div className="flex items-center gap-6">
         <PreferenceModal />
-        <p
-          onClick={() => {
-            openModal("login");
-          }}
-        >
-          Log In
-        </p>
-        <DropdownMenuComponent/>
+        <Link href="/">Home</Link>
+        <Link href="/trips">My Trips</Link>
+        <Link href="/deals">Deals</Link>
+        <DropdownMenuComponent />
       </div>
       <AuthDialogIndex />
     </nav>

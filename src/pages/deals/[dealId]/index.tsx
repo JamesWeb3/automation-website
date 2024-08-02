@@ -16,8 +16,8 @@ const Deals: NextPage = () => {
       <Navbar />
 
       <GridLayout
-        leftChild={<TripImage trip={trip} />}
-        rightChild={<TripSummary trip={trip} />}
+        leftChild={<TripImage />}
+        rightChild={<TripSummary  />}
       />
     </MainLayout>
   );

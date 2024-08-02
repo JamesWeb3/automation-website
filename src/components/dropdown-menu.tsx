@@ -29,10 +29,12 @@ import {
 import { MenuIcon } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useRouter } from "next/router";
+import { useAuthModal } from "@/contexts/AuthContext";
 
 const DropdownMenuComponent: React.FC = () => {
   const router = useRouter();
-  
+  const { openModal } = useAuthModal();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -45,23 +47,14 @@ const DropdownMenuComponent: React.FC = () => {
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-      <DropdownMenuGroup>
+        <DropdownMenuGroup>
           <DropdownMenuItem onClick={() => router.push("/")}>
             <Home className="mr-2 h-4 w-4" />
             <span>Home</span>
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => router.push("/deals")}>
-            <HandCoins className="mr-2 h-4 w-4" />
-            <span>Deals</span>
-          </DropdownMenuItem>
         </DropdownMenuGroup>
-     
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <User className="mr-2 h-4 w-4" />
-            <span>My Itinerary</span>
-          </DropdownMenuItem>
           <DropdownMenuItem onClick={() => router.push("/settings")}>
             <Settings className="mr-2 h-4 w-4" />
             <span>Settings</span>
@@ -93,7 +86,6 @@ const DropdownMenuComponent: React.FC = () => {
             </DropdownMenuPortal>
           </DropdownMenuSub>
         </DropdownMenuGroup>
-
         <DropdownMenuItem>
           <LifeBuoy className="mr-2 h-4 w-4" />
           <span>Support</span>
@@ -107,6 +99,14 @@ const DropdownMenuComponent: React.FC = () => {
           <span>Email History</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
+        <DropdownMenuItem
+          onClick={() => {
+            openModal("login");
+          }}
+        >
+          <LogOut className="mr-2 h-4 w-4" />
+          <span>Log in</span>
+        </DropdownMenuItem>
         <DropdownMenuItem>
           <LogOut className="mr-2 h-4 w-4" />
           <span>Log out</span>

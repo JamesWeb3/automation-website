@@ -1,33 +1,65 @@
-import React, { useState } from "react";
-import { Tabs } from "@/components/ui/tabs";
+import React, { useEffect } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import DealData from "@/data/test-deal-data.json";
 import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
-import { useRouter } from "next/router";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useRouter } from "next/router";
+import { Plus } from "lucide-react";
 
 export const ItineraryTab: React.FC = () => {
   const router = useRouter();
 
+  const handleItemClick = (dealId: string) => {
+    const currentQuery = { ...router.query, Id: dealId };
+    router.push(
+      {
+        pathname: router.pathname,
+        query: currentQuery,
+      },
+      undefined,
+      { shallow: true }
+    );
+  };
+
   return (
     <ScrollArea className="flex h-[80vh]">
-      <div>
-        <h3 className="text-lg font-semibold mb-2">Upcoming Trips</h3>
-        <Tabs>
+      <Tabs>
+        <TabsList className="flex w-full gap-3 bg-black rounded-lg p-1">
+          <TabsTrigger
+            className="text-white border border-white/40  font-medium rounded-md"
+            value="upcoming"
+          >
+            Upcoming
+          </TabsTrigger>
+          <TabsTrigger
+            className="text-white border border-white/40  font-medium rounded-md"
+            value="draft"
+          >
+            Draft
+          </TabsTrigger>
+          <TabsTrigger
+            className="text-white border border-white/40 font-medium "
+            value="expired"
+          >
+            Expired
+          </TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="upcoming">
           <Carousel>
-            <CarouselContent>
+            <CarouselContent className="flex flex-col gap-3">
               {DealData.map((deal, index) => (
                 <CarouselItem
-                  className="max-w-[250px] cursor-pointer"
+                className={`cursor-pointer ${router.query.id === deal.id ? 'opacity-50' : ''}`}
+                  onClick={() => handleItemClick(deal.id)}
                   key={index}
                 >
-                  <div className="rounded-xl border">
+                  <div className="rounded-xl border ">
                     <Image
                       alt="hotel thumbnail"
                       src={deal.thumbnail}
@@ -52,22 +84,31 @@ export const ItineraryTab: React.FC = () => {
               ))}
             </CarouselContent>
 
-            <CarouselPrevious />
-
-            <CarouselNext />
+           
           </Carousel>
-        </Tabs>
-      </div>
-      <div>
-        <h3 className="text-lg font-semibold mb-2 mt-4">Draft Trips</h3>
-        <Tabs>
-          <Carousel>
-            <CarouselContent>
+        </TabsContent>
+
+        <TabsContent value="draft">
+          <Carousel className="w-max">
+            <CarouselContent className="flex flex-col gap-3">
               {DealData.map((deal, index) => (
-                <CarouselItem
-                  className="max-w-[250px] cursor-pointer  opacity-40"
-                  key={index}
-                >
+                <CarouselItem className="cursor-pointer opacity-40" key={index}>
+                  <div className="bg-muted w-full h-28 rounded-xl items-center flex justify-center relative group">
+                    <Plus className="w-12 h-12 text opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+          
+          </Carousel>
+        </TabsContent>
+
+        <TabsContent value="expired">
+          <Carousel>
+            <CarouselContent className="flex flex-col gap-3">
+              {DealData.slice(3).map((deal, index) => (
+                <CarouselItem className="cursor-pointer opacity-40" key={index}>
                   <div className="rounded-xl border">
                     <Image
                       alt="hotel thumbnail"
@@ -85,46 +126,9 @@ export const ItineraryTab: React.FC = () => {
               ))}
             </CarouselContent>
 
-            <CarouselPrevious />
-
-            <CarouselNext />
           </Carousel>
-        </Tabs>
-      </div>
-
-      <div>
-        <h3 className="text-lg font-semibold mb-2 mt-4">Expired Trips</h3>
-        <Tabs>
-          <Carousel>
-            <CarouselContent>
-              {DealData.map((deal, index) => (
-                <CarouselItem
-                  className="max-w-[250px] cursor-pointer  opacity-40"
-                  key={index}
-                >
-                  <div className="rounded-xl border">
-                    <Image
-                      alt="hotel thumbnail"
-                      src={deal.thumbnail}
-                      layout="responsive"
-                      width={300}
-                      height={200}
-                      className="w-full rounded-tl-xl rounded-tr-xl"
-                    />
-                    <div className="p-1">
-                      <p className="font-semibold text-sm">{deal.name}</p>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-
-            <CarouselPrevious />
-
-            <CarouselNext />
-          </Carousel>
-        </Tabs>
-      </div>
+        </TabsContent>
+      </Tabs>
     </ScrollArea>
   );
 };

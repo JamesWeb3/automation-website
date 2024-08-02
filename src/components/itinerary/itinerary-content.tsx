@@ -1,35 +1,49 @@
 import React, { useState } from "react";
 import DealData from "@/data/single-deal.json";
-import Image from "next/image";
+import { TripHighlights } from "@/layouts/trip/trip-highlight";
+import { useTripContext } from "@/contexts/TripContext";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const ItineraryContent: React.FC = () => {
+  const { trip, loading } = useTripContext();
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (!trip) {
+    return <p>No trip found bro</p>;
+  }
+
   return (
-    <div className="flex flex-col bg-red-100">
-     
-        {DealData.map((deal: any, dealIndex: number) => (
-          <div className="cursor-pointer" key={dealIndex}>
-            <div className="rounded-xl border">
-             
-              <div>{deal.name}</div>
-              <div>{deal.location}</div>
-              <div>{deal.start_date} - {deal.end_date}</div>
-              <div>{deal.price}</div>
-              <div>
-                {deal.bookings.map((booking: any, bookingIndex: number) => (
-                  <div key={bookingIndex}>
-                    <div>{booking.name}</div>
-                    <div>{booking.location}</div>
-                    <div>{booking.provider}</div>
-                    <div>{booking.paid ? "Paid" : "Unpaid"}</div>
-                    <div>{booking.date}</div>
-                    <a href={booking.booking_url} target="_blank">View Booking</a>
-                  </div>
-                ))}
-              </div>
-            </div>
+    <div className="flex flex-col">
+      {DealData.map((deal: any, dealIndex: number) => (
+        <div key={dealIndex}>
+          <TripHighlights />
+          <div>
+            {trip.bookings.map((booking: any, bookingIndex: number) => (
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem key={bookingIndex} value="item-1">
+                  <AccordionTrigger>
+                    <div className="text-left">
+                      <p>{booking.name}</p>
+                      <p className="text-xs">{booking.date}</p>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    yoza
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            ))}
           </div>
-        ))}
-     
+        </div>
+      ))}
     </div>
   );
 };

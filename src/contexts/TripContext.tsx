@@ -6,7 +6,7 @@ import {
   ReactNode,
 } from "react";
 import { useRouter } from "next/router";
-import { Trip } from "@/types/trip";
+import { Trip } from "@/types/types"; // Ensure your types file is correct
 
 interface TripContextProps {
   trip: Trip | undefined;
@@ -32,14 +32,17 @@ export const TripProvider = ({ children, trips }: TripProviderProps) => {
   const router = useRouter();
   const [trip, setTrip] = useState<Trip | undefined>(undefined);
   const [loading, setLoading] = useState(true);
-  const id = router.query.dealId as string | undefined;
+  const id = router.query.Id as string | undefined;
 
   useEffect(() => {
+    console.log("id", id);
     if (id) {
-      setLoading(true);
+      setLoading(true); // Set loading to true while searching
       const foundTrip = trips.find((trip) => trip.id === id);
       setTrip(foundTrip);
-      setLoading(false);
+      setLoading(false); // Set loading to false after searching
+    } else {
+      setLoading(false); // Set loading to false if no id is found
     }
   }, [id, trips]);
 

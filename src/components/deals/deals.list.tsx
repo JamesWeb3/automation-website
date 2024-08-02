@@ -3,6 +3,7 @@ import Image from "next/image";
 import { z } from "zod";
 import { BedSVG, BathroomSVG, BookingComSVG } from "@/components/ui/icons";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import DealData from "@/data/test-deal-data.json";
 
 interface Deal {
   title: string;

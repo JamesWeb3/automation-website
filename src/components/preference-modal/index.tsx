@@ -19,7 +19,7 @@ export const PreferenceModal: React.FC = () => {
   return (
     <AlertDialog>
       <AlertDialogTrigger>
-        <div className="p-2 flex items-center gap-1 text-xs hover:bg-muted rounded-full ">
+        <div className="p-2 flex items-center gap-1 text-sm font-medium hover:bg-muted rounded-full ">
           <p>Eur</p> /{" "}
           <Image width={15} height={15} alt="icon" src={EnglishIcon} />
         </div>

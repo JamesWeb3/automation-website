@@ -13,7 +13,7 @@ import FoodList from "@/components/trip/food-list";
 import { DealsCarousel } from "@/components/deals-carousel";
 import TripImage from "@/components/trip-image-componnet";
 import TripSummary from "@/components/trip-summary-component";
-import { Trip } from "@/types/trip";
+import { Trip } from "@/types/types";
 import trips from "@/data/test-deal-data.json";
 import Navbar from "@/layouts/navbar";
 const TripContent: React.FC = () => {

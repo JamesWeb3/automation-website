@@ -10,11 +10,12 @@ const TripPage: React.FC = () => {
     <MainLayout>
       <Navbar />
       <GridLayout
+      variant="variant2"
         leftChild={<ItineraryTab />}
         rightChild={<ItineraryContent />}
       />
     </MainLayout>
   );
-};
+}; 
 
 export default TripPage;
