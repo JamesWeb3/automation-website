@@ -1,21 +1,8 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Separator } from "./ui/separator";
-import { Edit2, File } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { ServiceIcon } from "@/components/ui/service-icons";
-import { Trip } from "@/types/trip";
+import { useTripContext } from "@/contexts/TripContext";
 
-type TripImageProps = {
-  trip: Trip | undefined;
-};
-
-const TripImage: React.FC<TripImageProps> = ({ trip }) => {
+const TripImage: React.FC = () => {
+  const { trip, loading } = useTripContext();
   if (!trip) {
     return <p>No trip found</p>;
   }

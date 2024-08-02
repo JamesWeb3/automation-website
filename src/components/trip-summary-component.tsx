@@ -8,19 +8,14 @@ import { Separator } from "./ui/separator";
 import { Edit2, File, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceIcon } from "@/components/ui/service-icons";
-import { Trip } from "@/types/trip";
 import { PrintItinerary } from "./print-itineray-dialog";
-import { useRouter } from "next/router";
 import { ScrollArea } from "./ui/scroll-area";
 import { useToast } from "@/components/ui/use-toast";
+import { useTripContext } from "@/contexts/TripContext";
 
-type TripSummaryProps = {
-  trip: Trip | undefined;
-};
-
-const TripSummary: React.FC<TripSummaryProps> = ({ trip }) => {
+const TripSummary: React.FC = ({}) => {
   const { toast } = useToast();
-  const router = useRouter();
+  const { trip, loading } = useTripContext();
 
   const handleClone = () => {
     toast({
@@ -28,10 +23,6 @@ const TripSummary: React.FC<TripSummaryProps> = ({ trip }) => {
       description: "Your trip has been cloned successfully",
     });
     // router.push(`/trip}`);
-  };
-
-  const handleAddBooking = () => {
-    router.push(`/trips/2512-1315-2049-0183?accomodation=true`);
   };
 
   if (!trip) {
@@ -99,10 +90,7 @@ const TripSummary: React.FC<TripSummaryProps> = ({ trip }) => {
               </AccordionItem>
             ))}
           </Accordion>
-          <div
-            onClick={handleAddBooking}
-            className="flex justify-center hover:bg-muted rounded-lg my-1 py-1 cursor-pointer transition-ease"
-          >
+          <div className="flex justify-center hover:bg-muted rounded-lg my-1 py-1 cursor-pointer transition-ease">
             <Plus className="text-muted-foreground" />
           </div>
         </>
@@ -118,7 +106,7 @@ const TripSummary: React.FC<TripSummaryProps> = ({ trip }) => {
           Confirm & Pay Now ($2,499 USD)
         </Button>
         <Button onClick={handleClone} className="w-full">
-         Use & Edit Trip
+          Use & Edit Trip
         </Button>
       </div>
     </div>
