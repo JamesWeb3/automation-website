@@ -3,19 +3,15 @@ import Navbar from "@/layouts/navbar";
 import { GridLayout } from "@/layouts/grid-layout";
 import TripSummary from "@/components/trip-summary-component";
 import { MainLayout } from "@/layouts/main-layout";
-import HotelForm from "@/components/trip/hotel-form";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import trips from "@/data/test-deal-data.json";
 import { Trip } from "@/types/trip";
 import TripImage from "@/components/trip-image-componnet";
 
 const Deals: NextPage = () => {
-  const router = useRouter();
   const [trip, setTrip] = useState<Trip | undefined>(undefined);
   const [loading, setLoading] = useState(true);
   const hardcodedId = "2512-1315-2049-0183";
-
 
   useEffect(() => {
     console.log("ID FOUND", hardcodedId);
@@ -25,12 +21,14 @@ const Deals: NextPage = () => {
     setLoading(false);
   }, []);
 
-
   return (
     <MainLayout>
       <Navbar />
 
-      <GridLayout leftChild={<TripImage trip={trip} />} rightChild={<TripSummary trip={trip} />} />
+      <GridLayout
+        leftChild={<TripImage trip={trip} />}
+        rightChild={<TripSummary trip={trip} />}
+      />
     </MainLayout>
   );
 };

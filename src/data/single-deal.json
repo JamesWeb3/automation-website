@@ -1,0 +1,66 @@
+[
+    {
+      "id": "2512-1315-2049-0183",
+      "name": "Trip to Paris",
+      "thumbnail": "/backgrounds/paris.png",
+      "start_date": "10th September",
+      "location": "Paris",
+      "end_date": "20th September, 2024",
+      "price": "$1200",
+      "bookings": [
+        {
+          "type": "flights",
+          "name": "Fly from New York to Paris",
+          "location": "JFK International Airport",
+          "provider": "Air France",
+          "paid": true,
+          "id": "2512-1315-2049-0183-0001",
+          "date": "10th Sep - 11th Sep",
+          "booking_url": "https://www.airfrance.com"
+        },
+        {
+          "type": "accomodation",
+          "name": "Eiffel Tower View Hotel",
+          "location": "Paris",
+          "provider": "Parisian Suites",
+          "paid": true
+        },
+        {
+          "type": "activity",
+          "name": "Louvre Museum Tour",
+          "location": "Paris",
+          "provider": "Paris Tours",
+          "paid": true
+        },
+        {
+          "type": "transport",
+          "name": "Paris Metro Pass",
+          "location": "Paris",
+          "provider": "Paris Metro",
+          "paid": true
+        },
+        {
+          "type": "food",
+          "name": "Dinner at Le Jules Verne",
+          "location": "Paris",
+          "provider": "Le Jules Verne Restaurant",
+          "paid": true
+        },
+        {
+          "type": "food",
+          "name": "Lunch at Café de Flore",
+          "location": "Paris",
+          "provider": "Café de Flore",
+          "paid": false
+        },
+        {
+          "type": "food",
+          "name": "Breakfast at Hotel",
+          "location": "Eiffel Tower View Hotel",
+          "provider": "Parisian Suites",
+          "paid": true
+        }
+      ]
+    }
+  ]
+  

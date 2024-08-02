@@ -1,15 +1,16 @@
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
 import { AuthModalProvider } from "@/contexts/AuthContext";
-import { TripProvider } from '@/contexts/TripContext';
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
+import { TripProvider } from "@/contexts/TripContext";
+import trips from '@/data/test-deal-data.json';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AuthModalProvider>
-      <TripProvider>
-      <Component {...pageProps} />
-      <Toaster />
+      <TripProvider trips={trips}>
+        <Component {...pageProps} />
+        <Toaster />
       </TripProvider>
     </AuthModalProvider>
   );

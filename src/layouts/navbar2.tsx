@@ -26,16 +26,13 @@ import {
 } from "lucide-react";
 import { DropdownMenuSVG } from "@/components/ui/icons";
 import { AuthDialogIndex } from "@/components/auth";
-import TripSummary from "@/components/trip-summary-component";
-import { useTripContext } from "@/contexts/TripContext";
 
 const Navbar2: React.FC = () => {
-  const { tripType, setTripType } = useTripContext();
 
   return (
     <nav className="flex justify-between items-center w-full">
       <div className="flex items-center gap-6 cursor-pointer">
-        <p
+        {/* <p
           onClick={() => setTripType("Hotels")}
           className={tripType === "Hotels" ? "active" : ""}
         >
@@ -52,7 +49,7 @@ const Navbar2: React.FC = () => {
           className={tripType === "Food" ? "active" : ""}
         >
           Food
-        </p>
+        </p> */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline">
