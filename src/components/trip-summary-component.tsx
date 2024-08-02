@@ -5,108 +5,123 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Separator } from "./ui/separator";
-import { Edit2, File } from "lucide-react";
+import { Edit2, File, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { ServiceIcon } from "@/components/ui/service-icons";
+import { Trip } from "@/types/trip";
+import { PrintItinerary } from "./print-itineray-dialog";
 import { useRouter } from "next/router";
-import trips from "@/data/test-deal-data.json";
-import { useEffect, useState } from "react";
+import { ScrollArea } from "./ui/scroll-area";
+import { useToast } from "@/components/ui/use-toast";
 
-type Trip = {
-  id: string;
-  name: string;
-  thumbnail: string;
-  start_date: string;
-  end_date: string;
-  bookings: any[];
+type TripSummaryProps = {
+  trip: Trip | undefined;
 };
 
-const TripSummary: React.FC = () => {
+const TripSummary: React.FC<TripSummaryProps> = ({ trip }) => {
+  const { toast } = useToast();
   const router = useRouter();
-  const [trip, setTrip] = useState<Trip | undefined>(undefined);
-  const [loading, setLoading] = useState(true);
-  const hardcodedId = "2512-1315-2049-0183";
 
-  useEffect(() => {
-    console.log("ID FOUND", hardcodedId);
-    const foundTrip = trips.find((trip) => trip.id === hardcodedId);
-    setTrip(foundTrip);
-    console.log("FOUND TRIP", foundTrip);
-    setLoading(false);
-  }, []);
+  const handleClone = () => {
+    toast({
+      title: "Successfully Clone This Deal",
+      description: "Your trip has been cloned successfully",
+    });
+    // router.push(`/trip}`);
+  };
+
+  const handleAddBooking = () => {
+    router.push(`/trips/2512-1315-2049-0183?accomodation=true`);
+  };
 
   if (!trip) {
     return <p>No trip found</p>;
   }
 
   return (
-    <>
-      <div className="flex items-center justify-between bg-red-100">
+    <div className="flex flex-col h-full justify-between">
+      <div className="flex items-center justify-between">
         <div>
-          <h3 className="text-2xl font-medium">{trip.name}</h3>
+          <h3 className="text-3xl font-medium">{trip.name}</h3>
         </div>
 
-        <div>stuff Print Logic</div>
+        <div>
+          <PrintItinerary />
+        </div>
       </div>
 
-      <div className="flex flex-row items-center justify-between bg-green-100">
+      <div className="flex flex-row items-center justify-between my-2">
         <div>
           <div className="text-xs text-slate-500">ID {trip.id}</div>
           <p>{trip.start_date} -</p>
           <p> {trip.end_date}</p>
         </div>
 
-        <div>
-          <Image
-            width={300}
-            height={200}
-            src={trip.thumbnail}
-            alt={trip.name}
-          />
-        </div>
+        <div></div>
       </div>
 
       <Separator />
-
-      <Accordion type="single" collapsible className="w-full">
-        {trip.bookings.map((booking, bookingIndex) => (
-          <AccordionItem
-            className="relative"
-            key={bookingIndex}
-            value={`item-${bookingIndex}`}
+      <ScrollArea>
+        <>
+          <Accordion type="single" collapsible className="w-full">
+            {trip.bookings.map((booking, bookingIndex) => (
+              <AccordionItem
+                className="relative"
+                key={bookingIndex}
+                value={`item-${bookingIndex}`}
+              >
+                <AccordionTrigger className="text-sm py-2">
+                  <div className="items-left text-left ">
+                    <div className="flex items-center gap-4 font-">
+                      {booking.name}
+                      <ServiceIcon type={booking.type} />
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      {booking.date}
+                    </p>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="relative">
+                  <p>
+                    <strong>Location:</strong> {booking.location}
+                  </p>
+                  <p>
+                    <strong>Provider:</strong> {booking.provider}
+                  </p>
+                  <p>
+                    <strong>Paid:</strong> {booking.paid ? "Yes" : "No"}
+                  </p>
+                  <div className="flex gap-1 absolute top-0 right-0">
+                    <Edit2 className="w-4 h-4 text-slate-400" />
+                    <File className="w-4 h-4 text-slate-400" />
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <div
+            onClick={handleAddBooking}
+            className="flex justify-center hover:bg-muted rounded-lg my-1 py-1 cursor-pointer transition-ease"
           >
-            <AccordionTrigger className="text-sm py-2">
-              <div className="flex items-center gap-4">
-                <ServiceIcon type={booking.type} />
-                {booking.name}
-              </div>
-            </AccordionTrigger>
-            <AccordionContent className="relative">
-              <p>
-                <strong>Location:</strong> {booking.location}
-              </p>
-              <p>
-                <strong>Provider:</strong> {booking.provider}
-              </p>
-              <p>
-                <strong>Paid:</strong> {booking.paid ? "Yes" : "No"}
-              </p>
-              <div className="flex gap-1 absolute top-0 right-0">
-                <Edit2 className="w-4 h-4 text-slate-400" />
-                <File className="w-4 h-4 text-slate-400" />
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+            <Plus className="text-muted-foreground" />
+          </div>
+        </>
+      </ScrollArea>
 
       <div>
-        <p>Trip Cost $2k</p>
-        <p className="text-xs">Unpaid total in trip $359.49</p>
+        <p>Total Trip Cost Cost</p>
+        <p className="text-3xl font-semibold">$2,499 USD</p>
       </div>
-      <Button>Book Trip $2,000</Button>
-    </>
+
+      <div className="flex w-full justify-between gap-4">
+        <Button variant="outline" className="w-full">
+          Im Gay
+        </Button>
+        <Button onClick={handleClone} className="w-full">
+          Clone Trip
+        </Button>
+      </div>
+    </div>
   );
 };
 

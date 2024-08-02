@@ -54,7 +54,7 @@ export const BookTripDialog: React.FC<BookTripDialogProps> = ({
   });
 
   const onSubmit: SubmitHandler<CreateTripSchema> = async (data) => {
-    router.push("/trip");
+    router.push("/trips");
   };
 
   return (

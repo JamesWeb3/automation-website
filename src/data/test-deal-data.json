@@ -10,11 +10,13 @@
     "bookings": [
       {
         "type": "flights",
-        "name": "New York to Paris",
+        "name": "Fly from New York to Paris",
         "location": "JFK International Airport",
         "provider": "Air France",
-        "paid": true
-        
+        "paid": true,
+        "id": "2512-1315-2049-0183-0001",
+        "date": "10th Sep - 11th Sep",
+        "booking_url": "https://www.airfrance.com"
       },
       {
         "type": "accomodation",

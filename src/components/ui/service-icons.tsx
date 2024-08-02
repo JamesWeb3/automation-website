@@ -1,19 +1,29 @@
 import React from 'react';
-import { Hotel, Bike, PlaneIcon, Utensils, Train } from 'lucide-react';
 
 interface IconProps {
   type: 'accomodation' | 'activity' | 'flights' | 'transport' | 'food';
 }
 
-const iconMap = {
-  accomodation: <Hotel className="w-4 text-[#7EC3F5]" strokeWidth={2} />,
-  activity: <Bike className="w-4 text-[#B591E3]" />,
-  flights: <PlaneIcon className="w-4 text-[#E38B4B] " />,
-  food: <Utensils className="w-4 text-[#71ED75] " />,
-  transport:  <Train className="w-4 text-[#E34B4B] " />,
-  
+const bgColorMap = {
+  accomodation: 'bg-[#7EC3F5]',
+  activity: 'bg-[#B591E3]',
+  flights: 'bg-[#E38B4B]',
+  food: 'bg-[#71ED75]',
+  transport: 'bg-[#E34B4B]',
+};
+
+const textMap = {
+  accomodation: 'ACCOMODATION',
+  activity: 'ACTIVITY',
+  flights: 'FLIGHTS',
+  food: 'FOOD',
+  transport: 'TRANSPORT',
 };
 
 export const ServiceIcon: React.FC<IconProps> = ({ type }) => {
-  return <div>{iconMap[type]}</div>;
+  return (
+    <div className={`px-1 text-[8px] font-semibold rounded-full opacity-80 hover:bg-opacity-90 transition-ease ${bgColorMap[type]}`}>
+      {textMap[type]}
+    </div>
+  );
 };

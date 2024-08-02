@@ -17,7 +17,7 @@ export function MainLayout({ children }: MainLayoutV2Props) {
   return (
     <div
       className={cn(
-        `w-screen overflow-hidden bg-muted h-screen p-6 px-8 ${openSans.className}`
+        `w-screen overflow-hidden bg-muted h-screen p-6 px-8 max-w-[1800px] ${openSans.className}`
       )}
     >
       {children}
