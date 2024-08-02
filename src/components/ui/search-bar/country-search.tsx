@@ -8,7 +8,7 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import countryData from "@/data/countries.json";
-import { Label } from "../ui/label";
+import { Label } from "@/components/ui/label";
 
 const CountrySearch: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

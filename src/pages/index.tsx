@@ -1,6 +1,6 @@
 import Navbar from "@/layouts/navbar";
 import { AuthDialogIndex } from "@/components/auth";
-import SearchBar from "@/components/search-bar";
+import SearchBar from "@/components/ui/search-bar";
 import { DealsCarousel } from "@/components/deals-carousel";
 import Logo from "../../public/travallr_logo.png";
 import Image from "next/image";

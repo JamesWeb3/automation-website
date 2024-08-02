@@ -19,7 +19,7 @@ export function DealsCarousel() {
     <>
       <Carousel className="w-full">
         <CarouselContent className="-ml-2 px-2 w-full">
-          {DealsData.map((deal, index) => (
+          {DealsData.map((deal) => (
             <CarouselItem
               key={deal.id}
               className="pl-4 md:basis-1/2 lg:basis-1/3"

@@ -7,9 +7,9 @@ import {
 } from "@/components/ui/popover";
 import { FormControl, FormItem, FormField } from "@/components/ui/form";
 import { format } from "date-fns";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Label } from "../ui/label";
+import { Label } from "@/components/ui/label";
 
 type DataSearchprops = {
   form: any;
