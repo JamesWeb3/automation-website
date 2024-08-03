@@ -13,9 +13,8 @@ import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
-import { Input } from "./ui/input";
 import { createTripSchema } from "@/schemas/index";
-import { CloseSVG } from "./ui/icons";
+import { CloseSVG } from "../ui/icons";
 import { useRouter } from "next/router";
 import { Printer } from "lucide-react";
 

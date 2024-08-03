@@ -13,7 +13,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { DropdownMenuSVG } from "@/components/ui/icons";
-import { EditTripDialog } from "@/components/dialogs/edit-trip-dialog";
+import { EditTripDialog } from "@/components/dialogs/edit-trip";
+import { PrintItinerary } from "@/components/dialogs/print-itineray";
 
 export const TripHighlights: React.FC = () => {
   const { trip, loading } = useTripContext();
@@ -47,7 +48,7 @@ export const TripHighlights: React.FC = () => {
                   <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <span>Print Itinerary</span>
+                  <PrintItinerary/>
                   <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
                 </DropdownMenuItem>
                 <DropdownMenuItem>

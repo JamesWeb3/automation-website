@@ -4,17 +4,29 @@ import React from "react";
 interface MainLayoutV2Props {
   leftChild: React.ReactNode;
   rightChild: React.ReactNode;
-  variant?: "variant1" | "variant2"; 
+  variant?: "variant1" | "variant2";
 }
 
-export function GridLayout({ leftChild, rightChild, variant = "variant1" }: MainLayoutV2Props) {
-  const leftWidth = variant === "variant1" ? "w-1/3" : "w-1/5 min-w-[300px]";
-  const rightWidth = variant === "variant1" ? "w-2/3" : "w-4/5";
-
+export function GridLayout({
+  leftChild,
+  rightChild,
+  variant = "variant1",
+}: MainLayoutV2Props) {
   return (
-    <div className="flex w-full h-full gap-8 mt-4 pb-20">
-      <Card className={leftWidth}>{leftChild}</Card>
-      <Card className={rightWidth}>{rightChild}</Card>
+    <div className={`flex mt-4 ${variant === "variant1" ? "flex-col bg-black text-white" : "gap-4"}`}>
+
+      <Card
+        className={
+          variant === "variant1"
+            ? "h-1/3 bg-black text-white"
+            : "w-1/5 min-w-[300px]"
+        }
+      >
+        {leftChild}
+      </Card>
+      <Card className={variant === "variant1" ? "h-2/3" : "w-4/5"}>
+        {rightChild}
+      </Card>
     </div>
   );
 }

@@ -4,12 +4,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Separator } from "./ui/separator";
+import { Separator } from "../ui/separator";
 import { Edit2, File, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceIcon } from "@/components/ui/service-icons";
-import { PrintItinerary } from "./print-itineray-dialog";
-import { ScrollArea } from "./ui/scroll-area";
+import { ScrollArea } from "../ui/scroll-area";
 import { useToast } from "@/components/ui/use-toast";
 import { useTripContext } from "@/contexts/TripContext";
 import { useEffect } from "react";
@@ -26,7 +25,7 @@ const TripSummary: React.FC = ({}) => {
     // router.push(`/trip}`);
   };
 
-    useEffect(() => {
+  useEffect(() => {
     console.log("CONSOLE", trip);
   }, [trip]);
 
@@ -39,10 +38,6 @@ const TripSummary: React.FC = ({}) => {
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-3xl font-medium">{trip.name}</h3>
-        </div>
-
-        <div>
-          <PrintItinerary />
         </div>
       </div>
 
