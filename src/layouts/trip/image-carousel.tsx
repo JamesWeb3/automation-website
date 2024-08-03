@@ -22,7 +22,7 @@ export const ImageCarousel: React.FC = () => {
         />
       </div>
       <div className="flex flex-col gap-4 w-1/3">
-        <Image
+        {/* <Image
           alt={trip.name}
           src={trip.images[0]}
           className="rounded-xl"
@@ -37,7 +37,7 @@ export const ImageCarousel: React.FC = () => {
           layout="responsive"
           width={500}
           height={350}
-        />
+        /> */}
       </div>
     </div>
   );
