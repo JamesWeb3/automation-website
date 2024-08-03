@@ -33,7 +33,7 @@ export const TripProvider = ({ children, trips }: TripProviderProps) => {
   const router = useRouter();
   const [trip, setTrip] = useState<Trip | undefined>(undefined);
   const [loading, setLoading] = useState(true);
-  const id = router.query.tripid || router.query.Id;
+  const id = router.query.tripid || router.query.Id || router.query.dealId;
 
   useEffect(() => {
     console.log("id", id);

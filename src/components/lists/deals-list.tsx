@@ -1,15 +1,24 @@
 import Image from "next/image";
-import { z } from "zod";
-import { BedSVG, BathroomSVG, BookingComSVG } from "@/components/ui/icons";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import DealData from "@/data/test-deal-data.json";
 import { Users } from "lucide-react";
+import { useRouter } from "next/router";
 const DealsList: React.FC = () => {
+  const router = useRouter();
+
+  const handleDealClick = (id: string) => {
+    router.push(`/deals/${id}`);
+  };
+
   return (
-    <ScrollArea className="h-full">
-      <div className="grid grid-cols-2 gap-4">
+    <ScrollArea className="h-[60vh]">
+      <div className="grid grid-cols-4 gap-4">
         {DealData.map((deal: any, index: any) => (
-          <div key={index} className="rounded-lg bg-white">
+          <div
+            onClick={() => handleDealClick(deal.id)}
+            key={index}
+            className="rounded-lg bg-white"
+          >
             <Image
               alt="hotel thumbnail"
               src={deal.thumbnail}

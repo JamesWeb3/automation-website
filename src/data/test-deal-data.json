@@ -2,12 +2,18 @@
   {
     "id": "2512-1315-2049-0183",
     "name": "Trip to Paris",
+    "bio": "Beautfiul 10 day extortion in the heart of Paris. Enjoy the woonderful sites of the Louvre and Eiffel Tower",
     "thumbnail": "/backgrounds/paris.png",
     "start_date": "10th September",
     "location": "Paris",
     "end_date": "20th September, 2024",
     "price": "$1200",
     "persons": 2,
+    "images": [
+      "/backgrounds/paris-2.jpg",
+      "/backgrounds/paris-3.jpg"
+     
+    ],
     "bookings": [
       {
         "type": "flights",
@@ -89,6 +95,7 @@
     "location": "San Francisco, Napa Valley",
     "end_date": "15th October, 2024",
     "price": "$1100",
+    "persons": 4,
     "bookings": [
       {
         "type": "flights",
@@ -180,6 +187,7 @@
     "location": "Zurich, Lucerne, Interlaken",
     "end_date": "15th November, 2024",
     "price": "$1500",
+    "persons": 2,
     "bookings": [
       {
         "type": "flights",
@@ -271,6 +279,7 @@
     "location": "Istanbul, Cappadocia, Pamukkale",
     "end_date": "5th January, 2025",
     "price": "$1300",
+    "persons": 6,
     "bookings": [
       {
         "type": "flights",
@@ -351,6 +360,364 @@
         "id": "2512-1315-2049-0186-0008",
         "date": "21st Dec - 30th Dec",
         "booking_url": "https://www.istanbulhotels.com"
+      }
+    ]
+  },
+  {
+    "id": "2512-1315-2049-0187",
+    "name": "Trip to Finland",
+    "thumbnail": "/backgrounds/finland.png",
+    "start_date": "10th January",
+    "location": "Helsinki, Rovaniemi",
+    "end_date": "20th January, 2025",
+    "price": "$1400",
+    "persons": 2,
+    "bookings": [
+      {
+        "type": "flights",
+        "name": "New York to Helsinki",
+        "location": "JFK International Airport",
+        "provider": "Finnair",
+        "paid": true,
+        "id": "2512-1315-2049-0187-0001",
+        "date": "10th Jan",
+        "booking_url": "https://www.finnair.com"
+      },
+      {
+        "type": "accommodation",
+        "name": "Helsinki Central Hotel",
+        "location": "Helsinki",
+        "provider": "Helsinki Hotels",
+        "paid": true,
+        "id": "2512-1315-2049-0187-0002",
+        "date": "10th Jan - 15th Jan",
+        "booking_url": "https://www.helsinkihotels.com"
+      },
+      {
+        "type": "activity",
+        "name": "Northern Lights Tour",
+        "location": "Rovaniemi",
+        "provider": "Lapland Tours",
+        "paid": true,
+        "id": "2512-1315-2049-0187-0003",
+        "date": "14th Jan",
+        "booking_url": "https://www.laplandtours.com"
+      },
+      {
+        "type": "transport",
+        "name": "Snowmobile Rental",
+        "location": "Rovaniemi",
+        "provider": "Rovaniemi Rentals",
+        "paid": true,
+        "id": "2512-1315-2049-0187-0004",
+        "date": "12th Jan - 18th Jan",
+        "booking_url": "https://www.rovaniemirentals.com"
+      },
+      {
+        "type": "food",
+        "name": "Dinner at Savoy",
+        "location": "Helsinki",
+        "provider": "Savoy Restaurant",
+        "paid": true,
+        "id": "2512-1315-2049-0187-0005",
+        "date": "13th Jan",
+        "booking_url": "https://www.savoy.fi"
+      },
+      {
+        "type": "food",
+        "name": "Lunch at Café Esplanad",
+        "location": "Helsinki",
+        "provider": "Café Esplanad",
+        "paid": false,
+        "id": "2512-1315-2049-0187-0006",
+        "date": "11th Jan",
+        "booking_url": "https://www.cafeesplanad.fi"
+      },
+      {
+        "type": "food",
+        "name": "Breakfast at Hotel",
+        "location": "Helsinki Central Hotel",
+        "provider": "Helsinki Hotels",
+        "paid": true,
+        "id": "2512-1315-2049-0187-0007",
+        "date": "10th Jan - 15th Jan",
+        "booking_url": "https://www.helsinkihotels.com"
+      }
+    ]
+  },
+  {
+    "id": "2512-1315-2049-0188",
+    "name": "Trip to Cape Town",
+    "thumbnail": "/backgrounds/cape_town.jpg",
+    "start_date": "15th February",
+    "location": "Cape Town, Stellenbosch",
+    "end_date": "25th February, 2025",
+    "price": "$1600",
+    "persons": 4,
+    "bookings": [
+      {
+        "type": "flights",
+        "name": "London to Cape Town",
+        "location": "Heathrow Airport",
+        "provider": "British Airways",
+        "paid": true,
+        "id": "2512-1315-2049-0188-0001",
+        "date": "15th Feb",
+        "booking_url": "https://www.britishairways.com"
+      },
+      {
+        "type": "accommodation",
+        "name": "Cape Town Grand Hotel",
+        "location": "Cape Town",
+        "provider": "Cape Town Hotels",
+        "paid": true,
+        "id": "2512-1315-2049-0188-0002",
+        "date": "15th Feb - 20th Feb",
+        "booking_url": "https://www.capetownhotels.com"
+      },
+      {
+        "type": "activity",
+        "name": "Table Mountain Hike",
+        "location": "Cape Town",
+        "provider": "Cape Town Adventures",
+        "paid": true,
+        "id": "2512-1315-2049-0188-0003",
+        "date": "18th Feb",
+        "booking_url": "https://www.capetownadventures.com"
+      },
+      {
+        "type": "transport",
+        "name": "Wine Tour in Stellenbosch",
+        "location": "Stellenbosch",
+        "provider": "Stellenbosch Tours",
+        "paid": true,
+        "id": "2512-1315-2049-0188-0004",
+        "date": "22nd Feb",
+        "booking_url": "https://www.stellenboschtours.com"
+      },
+      {
+        "type": "activity",
+        "name": "Cape Peninsula Tour",
+        "location": "Cape Town",
+        "provider": "Cape Peninsula Tours",
+        "paid": false,
+        "id": "2512-1315-2049-0188-0005",
+        "date": "19th Feb",
+        "booking_url": "https://www.capepeninsulatours.com"
+      },
+      {
+        "type": "food",
+        "name": "Dinner at The Test Kitchen",
+        "location": "Cape Town",
+        "provider": "The Test Kitchen",
+        "paid": true,
+        "id": "2512-1315-2049-0188-0006",
+        "date": "16th Feb",
+        "booking_url": "https://www.thetestkitchen.co.za"
+      },
+      {
+        "type": "food",
+        "name": "Lunch at V&A Waterfront",
+        "location": "Cape Town",
+        "provider": "Local Eatery",
+        "paid": false,
+        "id": "2512-1315-2049-0188-0007",
+        "date": "17th Feb",
+        "booking_url": "https://www.waterfrontlocaleatery.co.za"
+      },
+      {
+        "type": "food",
+        "name": "Breakfast at Hotel",
+        "location": "Cape Town Grand Hotel",
+        "provider": "Cape Town Hotels",
+        "paid": true,
+        "id": "2512-1315-2049-0188-0008",
+        "date": "15th Feb - 20th Feb",
+        "booking_url": "https://www.capetownhotels.com"
+      }
+    ]
+  },
+  {
+    "id": "2512-1315-2049-0189",
+    "name": "Trip to Germany",
+    "thumbnail": "/backgrounds/germany.jpg",
+    "start_date": "5th April",
+    "location": "Berlin, Munich",
+    "end_date": "15th April, 2025",
+    "price": "$1500",
+    "persons": 2,
+    "bookings": [
+      {
+        "type": "flights",
+        "name": "New York to Berlin",
+        "location": "JFK International Airport",
+        "provider": "Lufthansa",
+        "paid": true,
+        "id": "2512-1315-2049-0189-0001",
+        "date": "5th Apr",
+        "booking_url": "https://www.lufthansa.com"
+      },
+      {
+        "type": "accommodation",
+        "name": "Berlin City Hotel",
+        "location": "Berlin",
+        "provider": "Berlin Hotels",
+        "paid": true,
+        "id": "2512-1315-2049-0189-0002",
+        "date": "5th Apr - 10th Apr",
+        "booking_url": "https://www.berlinhotels.com"
+      },
+      {
+        "type": "activity",
+        "name": "Berlin Wall Tour",
+        "location": "Berlin",
+        "provider": "Berlin Tours",
+        "paid": true,
+        "id": "2512-1315-2049-0189-0003",
+        "date": "7th Apr",
+        "booking_url": "https://www.berlintours.com"
+      },
+      {
+        "type": "transport",
+        "name": "Train to Munich",
+        "location": "Berlin",
+        "provider": "Deutsche Bahn",
+        "paid": true,
+        "id": "2512-1315-2049-0189-0004",
+        "date": "10th Apr",
+        "booking_url": "https://www.deutschebahn.com"
+      },
+      {
+        "type": "activity",
+        "name": "Neuschwanstein Castle Tour",
+        "location": "Munich",
+        "provider": "Munich Tours",
+        "paid": false,
+        "id": "2512-1315-2049-0189-0005",
+        "date": "12th Apr",
+        "booking_url": "https://www.munichtours.com"
+      },
+      {
+        "type": "food",
+        "name": "Dinner at Hofbräuhaus",
+        "location": "Munich",
+        "provider": "Hofbräuhaus",
+        "paid": true,
+        "id": "2512-1315-2049-0189-0006",
+        "date": "11th Apr",
+        "booking_url": "https://www.hofbrauhaus.de"
+      },
+      {
+        "type": "food",
+        "name": "Lunch at Market Hall",
+        "location": "Munich",
+        "provider": "Local Eatery",
+        "paid": false,
+        "id": "2512-1315-2049-0189-0007",
+        "date": "13th Apr",
+        "booking_url": "https://www.markethallemunich.de"
+      },
+      {
+        "type": "food",
+        "name": "Breakfast at Hotel",
+        "location": "Berlin City Hotel",
+        "provider": "Berlin Hotels",
+        "paid": true,
+        "id": "2512-1315-2049-0189-0008",
+        "date": "5th Apr - 10th Apr",
+        "booking_url": "https://www.berlinhotels.com"
+      }
+    ]
+  },
+  {
+    "id": "2512-1315-2049-0190",
+    "name": "Trip to Thailand",
+    "thumbnail": "/backgrounds/thailand.jpg",
+    "start_date": "1st June",
+    "location": "Bangkok, Chiang Mai",
+    "end_date": "15th June, 2025",
+    "price": "$1300",
+    "persons": 2,
+    "bookings": [
+      {
+        "type": "flights",
+        "name": "Los Angeles to Bangkok",
+        "location": "LAX International Airport",
+        "provider": "Thai Airways",
+        "paid": true,
+        "id": "2512-1315-2049-0190-0001",
+        "date": "1st Jun",
+        "booking_url": "https://www.thaiairways.com"
+      },
+      {
+        "type": "accommodation",
+        "name": "Bangkok Luxury Hotel",
+        "location": "Bangkok",
+        "provider": "Bangkok Hotels",
+        "paid": true,
+        "id": "2512-1315-2049-0190-0002",
+        "date": "1st Jun - 8th Jun",
+        "booking_url": "https://www.bangkokhotels.com"
+      },
+      {
+        "type": "activity",
+        "name": "Grand Palace Tour",
+        "location": "Bangkok",
+        "provider": "Bangkok Tours",
+        "paid": true,
+        "id": "2512-1315-2049-0190-0003",
+        "date": "4th Jun",
+        "booking_url": "https://www.bangkoktours.com"
+      },
+      {
+        "type": "transport",
+        "name": "Flight to Chiang Mai",
+        "location": "Bangkok",
+        "provider": "Thai Airways",
+        "paid": true,
+        "id": "2512-1315-2049-0190-0004",
+        "date": "8th Jun",
+        "booking_url": "https://www.thaiairways.com"
+      },
+      {
+        "type": "activity",
+        "name": "Elephant Sanctuary Visit",
+        "location": "Chiang Mai",
+        "provider": "Chiang Mai Tours",
+        "paid": false,
+        "id": "2512-1315-2049-0190-0005",
+        "date": "11th Jun",
+        "booking_url": "https://www.chiangmaitours.com"
+      },
+      {
+        "type": "food",
+        "name": "Dinner at Issaya Siamese Club",
+        "location": "Bangkok",
+        "provider": "Issaya Siamese Club",
+        "paid": true,
+        "id": "2512-1315-2049-0190-0006",
+        "date": "2nd Jun",
+        "booking_url": "https://www.issayas.com"
+      },
+      {
+        "type": "food",
+        "name": "Lunch at Boat Noodle",
+        "location": "Bangkok",
+        "provider": "Boat Noodle",
+        "paid": false,
+        "id": "2512-1315-2049-0190-0007",
+        "date": "3rd Jun",
+        "booking_url": "https://www.boatnoodle.com"
+      },
+      {
+        "type": "food",
+        "name": "Breakfast at Hotel",
+        "location": "Bangkok Luxury Hotel",
+        "provider": "Bangkok Hotels",
+        "paid": true,
+        "id": "2512-1315-2049-0190-0008",
+        "date": "1st Jun - 8th Jun",
+        "booking_url": "https://www.bangkokhotels.com"
       }
     ]
   }

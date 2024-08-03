@@ -11,14 +11,33 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Button } from "../ui/button";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command";
+import { Button } from "@/components/ui/button";
 import { CalendarIcon } from "lucide-react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
-import { Calendar } from "../ui/calendar";
+import { Calendar } from "@/components/ui/calendar";
+import { BreadcrumbComponent } from "../breadcrumb-component";
 
 type CreateTripSchema = z.infer<typeof createTripSchema>;
 
@@ -45,23 +64,42 @@ const DealsForm: React.FC = () => {
 
   return (
     <div className="">
-      <h2 className="text-3xl font-medium">Find Trending Deals</h2>
+      <BreadcrumbComponent />
+      <h2 className="text-4xl font-semibold">Find Trending Deals</h2>
+
+      <Command className="bg-white w-[400px] h-10 mt-2">
+        <CommandInput placeholder="Type a command or search..." />
+        {/* <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup heading="Suggestions">
+            <CommandItem>Calendar</CommandItem>
+            <CommandItem>Search Emoji</CommandItem>
+            <CommandItem>Calculator</CommandItem>
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading="Settings">
+            <CommandItem>Profile</CommandItem>
+            <CommandItem>Billing</CommandItem>
+            <CommandItem>Settings</CommandItem>
+          </CommandGroup>
+        </CommandList> */}
+      </Command>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 mt-4">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="flex flex-row items-center gap-4 mt-4"
+        >
           <FormField
             control={form.control}
             name="budget"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="flex justify-between font-semibold">
-                  Set Your Budget Per Night
-                  <div>$</div>
-                </FormLabel>
                 <FormControl>
-                  <>
-                    <Progress className="cursor-pointer" {...field} />
-                  </>
+                  <div className="flex items-center gap-2 w-28">
+                    <Progress className="cursor-pointer h-2" {...field} />
+                    <p>$1,599</p>
+                  </div>
                 </FormControl>
 
                 <FormMessage />
@@ -74,26 +112,39 @@ const DealsForm: React.FC = () => {
             name="date"
             render={({ field }) => (
               <FormItem className="flex flex-col">
-                <FormLabel className="flex justify-between font-semibold">
-                  How long will you stay for?
-                </FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
-                      <Button
-                        variant={"outline"}
-                        className={cn(
-                          "w-[240px] pl-3 text-left font-normal",
-                          !field.value && "text-muted-foreground"
-                        )}
-                      >
-                        {field.value ? (
-                          format(field.value, "PPP")
-                        ) : (
-                          <span>Pick a date</span>
-                        )}
-                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                      </Button>
+                      <div className="flex gap-2">
+                        <Button
+                          variant={"outline"}
+                          className={cn(
+                            "w-[240px] pl-3 text-left font-normal",
+                            !field.value && "text-muted-foreground"
+                          )}
+                        >
+                          {field.value ? (
+                            format(field.value, "PPP")
+                          ) : (
+                            <span>Check in date</span>
+                          )}
+                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                        </Button>
+                        <Button
+                          variant={"outline"}
+                          className={cn(
+                            "w-[240px] pl-3 text-left font-normal",
+                            !field.value && "text-muted-foreground"
+                          )}
+                        >
+                          {field.value ? (
+                            format(field.value, "PPP")
+                          ) : (
+                            <span>Check out date</span>
+                          )}
+                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                        </Button>
+                      </div>
                     </FormControl>
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0" align="start">
@@ -119,9 +170,7 @@ const DealsForm: React.FC = () => {
             name="people_count"
             render={({ field }) => (
               <FormItem className="flex flex-col">
-                <FormLabel className="flex justify-between font-semibold">
-                  How many people are coming?
-                </FormLabel>
+                <FormLabel className="flex justify-between font-semibold"></FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
                     <FormControl>
