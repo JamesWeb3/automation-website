@@ -11,14 +11,14 @@ import {
     PopoverContent,
     PopoverTrigger,
   } from "@/components/ui/popover";
-  import { Button } from "../ui/button";
+  import { Button } from "../../ui/button";
   import { CalendarIcon } from "lucide-react";
   import { type SubmitHandler, useForm } from "react-hook-form";
   import { z } from "zod";
   import { Progress } from "@/components/ui/progress";
   import { cn } from "@/lib/utils";
   import { format } from "date-fns";
-  import { Calendar } from "../ui/calendar";
+  import { Calendar } from "../../ui/calendar";
   
   type CreateTripSchema = z.infer<typeof createTripSchema>;
   

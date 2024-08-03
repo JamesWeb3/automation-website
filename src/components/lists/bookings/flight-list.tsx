@@ -59,7 +59,7 @@ const createTripSchema = z.object({
 const FlightList: React.FC = () => {
   return (
     <ScrollArea className="h-screen">
-      <div className="flex grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {hotels.map((hotel, index) => (
           <div key={index} className="rounded-lg bg-white">
             <Image

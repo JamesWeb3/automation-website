@@ -2,11 +2,12 @@ import React from "react";
 
 import { AuthDialogIndex } from "@/components/auth";
 import { useAuthModal } from "@/contexts/AuthContext";
-import { PreferenceModal } from "@/components/preference-modal";
+import { PreferenceModal } from "@/components/dialogs/preference-modal";
 import DropdownMenuComponent from "@/components/dropdown-menu";
 import Logo from "../../public/travallr_logo.png";
 import Image from "next/image";
 import Link from "next/link";
+
 const Navbar: React.FC = () => {
   const { openModal } = useAuthModal();
 

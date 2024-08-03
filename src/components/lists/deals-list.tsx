@@ -1,19 +1,10 @@
-import HotelImage from "../../../public/hotel.jpg";
 import Image from "next/image";
 import { z } from "zod";
 import { BedSVG, BathroomSVG, BookingComSVG } from "@/components/ui/icons";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import DealData from "@/data/test-deal-data.json";
 
-interface Deal {
-  title: string;
-  bathrooms: number;
-  bedrooms: number;
-  sqMtr: number;
-  image?: string;
-}
-
-const DealList: React.FC = () => {
+const DealsList: React.FC = () => {
   return (
     <ScrollArea className="h-screen">
       <div className="grid grid-cols-2 gap-4">
@@ -50,4 +41,4 @@ const DealList: React.FC = () => {
   );
 };
 
-export default DealList;
+export default DealsList;

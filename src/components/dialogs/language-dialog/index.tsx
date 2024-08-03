@@ -11,8 +11,8 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import EnglishIcon from "../../../public/english.png";
 import Image from "next/image";
-import { CurrencySelector } from "@/components/preference-modal/currency-selector";
-import { LanguageSelector } from "@/components/preference-modal/language-selector";
+import { CurrencySelector } from "@/components/dialogs/language-dialog/currency-selector";
+import { LanguageSelector } from "@/components/dialogs/language-dialog/language-selector";
 import { X } from "lucide-react";
 
 export const PreferenceModal: React.FC = () => {
