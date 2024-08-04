@@ -4,11 +4,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Separator } from "../ui/separator";
-import { Edit2, File } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import { X, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceIcon } from "@/components/ui/service-icons";
-import { ScrollArea } from "../ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/components/ui/use-toast";
 import { useTripContext } from "@/contexts/TripContext";
 import { useRouter } from "next/router";
@@ -42,7 +42,7 @@ const BookingsSummary: React.FC = ({}) => {
               key={bookingIndex}
               value={`item-${bookingIndex}`}
             >
-              <AccordionTrigger className="text-sm py-2">
+              <AccordionTrigger className="text-sm py-2 pr-3">
                 <div className="items-left text-left ">
                   <div className="flex items-center gap-4 font-">
                     {booking.name}
@@ -52,26 +52,38 @@ const BookingsSummary: React.FC = ({}) => {
                     {booking.date}
                   </p>
                 </div>
+                <div className={`rounded-full ${booking.paid ? "bg-green-100" : "bg-red-100"}`}>
+                  <DollarSign />
+                </div>
               </AccordionTrigger>
-              <AccordionContent className="relative">
-                <p>
-                  <strong>Location:</strong> {booking.location}
-                </p>
-                <p>
-                  <strong>Provider:</strong> {booking.provider}
-                </p>
-                <p>
-                  <strong>Paid:</strong> {booking.paid ? "Yes" : "No"}
-                </p>
-                <div className="flex gap-1 absolute top-0 right-0">
-                  <Edit2 className="w-4 h-4 text-slate-400" />
-                  <File className="w-4 h-4 text-slate-400" />
+              <AccordionContent className="flex justify-between">
+                <div>
+                  <p>
+                    <strong>Location:</strong> {booking.location}
+                  </p>
+                  <p>
+                    <strong>Provider:</strong> {booking.provider}
+                  </p>
+
+                  <p>
+                    <strong>Status:</strong> Booking paid in full
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <p className="text-red-500 text-xs">
+                    Remove Booking from Trip
+                  </p>
+                  <div>
+                    <X className="text-red-500" />
+                  </div>
                 </div>
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
       </ScrollArea>
+      <div className="text-blue-500">Add Booking</div>
 
       <div>
         <p>Total Trip Cost Cost</p>
