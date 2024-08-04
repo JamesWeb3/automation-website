@@ -1,0 +1,93 @@
+[
+    {
+      "name": "Elegant Condo Just 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_time": "2 hours"
+    },
+    {
+      "name": "Charming Flat 5 Minutes Away from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_duration": "2 hours"
+    },
+    {
+      "name": "Stylish Apartment Minutes from Central Station – Only 5 Minutes Away",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_time": "2 hours"
+    },
+    {
+      "name": "Modern Apartment Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_duration": "2 hours"
+    },
+    {
+      "name": "Cozy Apartment Just 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_time": "2 hours"
+    },
+    {
+      "name": "Chic Rental 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_duration": "2 hours"
+    },
+    {
+      "name": "Conveniently Located Apartment 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_time": "2 hours"
+    },
+    {
+      "name": "Upgraded Apartment 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_duration": "2 hours"
+    },
+    {
+      "name": "Inviting Flat 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_time": "2 hours"
+    },
+    {
+      "name": "Well-Appointed Apartment 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_duration": "2 hours"
+    },
+    {
+      "name": "Lovely Apartment 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_time": "2 hours"
+    },
+    {
+      "name": "Elegant Living Space 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_duration": "2 hours"
+    },
+    {
+      "name": "Newly Renovated Apartment 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_time": "2 hours"
+    },
+    {
+      "name": "Luxurious Apartment 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_duration": "2 hours"
+    },
+    {
+      "name": "Comfortable Apartment Just 5 Minutes from Central Station",
+      "price": 100,
+      "provider_logo": "/flights/jetstar.png",
+      "flight_time": "2 hours"
+    }
+  ]
+  

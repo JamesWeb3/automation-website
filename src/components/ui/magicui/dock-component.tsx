@@ -26,13 +26,13 @@ export function DockDemo() {
         <DockIcon onClick={() => handleAddBooking("accomodation")} className="border p-3">
             <ServiceIcon type={"accomodation"} />
         </DockIcon>
-        <DockIcon className="border p-3">
+        <DockIcon onClick={() => handleAddBooking("flights")} className="border p-3">
             <ServiceIcon type={"flights"} />
         </DockIcon>
-        <DockIcon className="border p-3">
+        <DockIcon onClick={() => handleAddBooking("food")} className="border p-3">
             <ServiceIcon type={"food"} />
         </DockIcon>
-        <DockIcon className="border p-3">
+        <DockIcon onClick={() => handleAddBooking("transport")} className="border p-3">
             <ServiceIcon type={"transport"} />
         </DockIcon>
     </Dock>
