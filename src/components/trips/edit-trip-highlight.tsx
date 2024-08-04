@@ -9,6 +9,7 @@ const TripImage: React.FC = () => {
 
   return (
     <div>
+      yazadsx
       <Image width={400} height={300} src={trip.thumbnail} alt={trip.name} />
     </div>
   );

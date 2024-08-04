@@ -3,6 +3,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import DealData from "@/data/test-deal-data.json";
 import { Users } from "lucide-react";
 import { useRouter } from "next/router";
+
 const DealsList: React.FC = () => {
   const router = useRouter();
 
@@ -17,7 +18,7 @@ const DealsList: React.FC = () => {
           <div
             onClick={() => handleDealClick(deal.id)}
             key={index}
-            className="rounded-lg bg-white"
+            className="rounded-lg bg-white cursor-pointer"
           >
             <Image
               alt="hotel thumbnail"

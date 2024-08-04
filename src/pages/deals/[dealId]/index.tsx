@@ -19,7 +19,7 @@ const Deals: NextPage = () => {
   return (
     <MainLayout>
       <Navbar />
-      <ScrollArea className="h-full space-y-4">
+      <ScrollArea className="h-full space-y-4 pb-10">
         <div className="flex  w-full justify-between">
           <BreadcrumbComponent />
           <div className="flex gap-2 flex-row text-sm">
