@@ -6,6 +6,7 @@ import TripSummary from "@/components/trips/edit-bookings-component";
 import { MainLayout } from "@/layouts/main-layout";
 import TripImage from "@/components/trips/edit-trip-highlight";
 import { useTripContext } from "@/contexts/TripContext";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Deals: NextPage = () => {
   const { trip } = useTripContext();
@@ -13,8 +14,9 @@ const Deals: NextPage = () => {
   return (
     <MainLayout>
       <Navbar />
-
-      <GridLayout leftChild={<TripImage />} rightChild={<TripSummary />} />
+      <ScrollArea className="h-full space-y-4 pb-10 max-w-[1000px] mx-auto">
+        <TripImage /> <TripSummary />
+      </ScrollArea>
     </MainLayout>
   );
 };

@@ -5,15 +5,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
-import { X, DollarSign, Trash2 } from "lucide-react";
+import { X, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceIcon } from "@/components/ui/service-icons";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/components/ui/use-toast";
 import { useTripContext } from "@/contexts/TripContext";
 import { useRouter } from "next/router";
-import { AddBookingPopup } from "@/components/ui/add-booking";
-const BookingsSummary: React.FC = ({}) => {
+
+const DisplayBookingSummary: React.FC = ({}) => {
   const router = useRouter();
   const { toast } = useToast();
   const { trip, loading } = useTripContext();
@@ -35,15 +35,15 @@ const BookingsSummary: React.FC = ({}) => {
       <p className="text-sm font-semibold">Booking Summary</p>
       <Separator />
       <ScrollArea>
-        <Accordion type="single" collapsible className="w-full [&[data-state=open]>]:border">
+        <Accordion type="single" collapsible className="w-full">
           {trip.bookings.map((booking, bookingIndex) => (
             <AccordionItem
               className="relative"
               key={bookingIndex}
               value={`item-${bookingIndex}`}
             >
-              <AccordionTrigger className="text-sm py-2 pr-3 hover:bg-gray-200 p-2 rounded-md">
-                <div className="text-left">
+              <AccordionTrigger className="text-sm py-2 pr-3">
+                <div className="items-left text-left ">
                   <div className="flex items-center gap-4 font-">
                     {booking.name}
                     <ServiceIcon type={booking.type} />
@@ -52,16 +52,12 @@ const BookingsSummary: React.FC = ({}) => {
                     {booking.date}
                   </p>
                 </div>
-                <div className="flex">
-                  <div
-                    className={`flex rounded-full ${
-                      booking.paid ? "bg-green-100" : "bg-red-100"
-                    }`}
-                  >
-                    <DollarSign />
-                  </div>
-
-                  <Trash2 className="hover:text-red-500 transition-ease"/>
+                <div
+                  className={`rounded-full ${
+                    booking.paid ? "bg-green-100" : "bg-red-100"
+                  }`}
+                >
+                  <DollarSign />
                 </div>
               </AccordionTrigger>
               <AccordionContent className="flex justify-between">
@@ -72,27 +68,12 @@ const BookingsSummary: React.FC = ({}) => {
                   <p>
                     <strong>Provider:</strong> {booking.provider}
                   </p>
-
-                  <p>
-                    <strong>Status:</strong> Booking paid in full
-                  </p>
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <p className="text-red-500 text-xs">
-                    Remove Booking from Trip
-                  </p>
-                  <div>
-                    <X className="text-red-500" />
-                  </div>
                 </div>
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
       </ScrollArea>
-      
-      <AddBookingPopup/>
 
       <div>
         <p>Total Trip Cost Cost</p>
@@ -111,4 +92,4 @@ const BookingsSummary: React.FC = ({}) => {
   );
 };
 
-export default BookingsSummary;
+export default DisplayBookingSummary;

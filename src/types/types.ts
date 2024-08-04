@@ -1,4 +1,9 @@
+import { ReactNode } from "react";
+
 export type Trip = {
+  bio: ReactNode;
+  location: ReactNode;
+  images: any;
   id: string;
   name: string;
   thumbnail: string;
@@ -17,3 +22,11 @@ export type Booking = {
   date: string;
   booking_url: string;
 };
+
+export type Accomodation = {
+  title: string;
+  bathrooms: number;
+  bedrooms: number;
+  sqMtr: number;
+  image?: string;
+}

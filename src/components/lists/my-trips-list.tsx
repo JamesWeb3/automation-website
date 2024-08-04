@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DealData from "@/data/single-deal.json";
-import { TripHighlights } from "@/layouts/trip/trip-highlight";
+import { TripHighlights } from "@/components/trips/trip-header";
 import { useTripContext } from "@/contexts/TripContext";
 import {
   Accordion,

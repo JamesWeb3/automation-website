@@ -73,6 +73,7 @@ export interface DockIconProps {
   className?: string;
   children?: React.ReactNode;
   props?: PropsWithChildren;
+  onClick?: () => void;
 }
 
 const DockIcon = ({

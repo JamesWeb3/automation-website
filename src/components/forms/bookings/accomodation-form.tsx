@@ -36,7 +36,7 @@ const createTripSchema = z.object({
   people_count: z.number(),
 });
 
-const HotelForm: React.FC = () => {
+const AccomodationForm: React.FC = () => {
   const form = useForm<CreateTripSchema>();
 
   const onSubmit: SubmitHandler<CreateTripSchema> = async (data) => {
@@ -189,4 +189,4 @@ const HotelForm: React.FC = () => {
   );
 };
 
-export default HotelForm;
+export default AccomodationForm;

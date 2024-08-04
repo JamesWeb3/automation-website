@@ -7,6 +7,7 @@ import { BreadcrumbComponent } from "@/components/breadcrumb-component";
 import { ImageCarousel } from "@/layouts/trip/image-carousel";
 import { MapPin } from "lucide-react";
 import TripSummary from "@/components/trips/edit-bookings-component";
+import DisplayBookingSummary from "@/components/deals/display-bookings-component";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Deals: NextPage = () => {
@@ -55,7 +56,7 @@ const Deals: NextPage = () => {
           </div>
         </div>
 
-        <TripSummary />
+        <DisplayBookingSummary />
       </ScrollArea>
     </MainLayout>
   );
