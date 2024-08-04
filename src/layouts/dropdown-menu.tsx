@@ -86,7 +86,7 @@ const DropdownMenuComponent: React.FC = () => {
             </DropdownMenuPortal>
           </DropdownMenuSub>
         </DropdownMenuGroup>
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => router.push('/support')}>
           <LifeBuoy className="mr-2 h-4 w-4" />
           <span>Support</span>
         </DropdownMenuItem>

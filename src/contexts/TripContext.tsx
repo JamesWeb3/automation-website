@@ -38,12 +38,12 @@ export const TripProvider = ({ children, trips }: TripProviderProps) => {
   useEffect(() => {
     console.log("id", id);
     if (id) {
-      setLoading(true); // Set loading to true while searching
+      setLoading(true);
       const foundTrip = trips.find((trip) => trip.id === id);
       setTrip(foundTrip);
-      setLoading(false); // Set loading to false after searching
+      setLoading(false);
     } else {
-      setLoading(false); // Set loading to false if no id is found
+      setLoading(false);
     }
   }, [id, trips]);
 

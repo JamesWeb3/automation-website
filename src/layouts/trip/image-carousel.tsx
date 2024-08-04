@@ -30,40 +30,40 @@ export const ImageCarousel: React.FC = () => {
 
   return (
     <AlertDialog>
-      <AlertDialogTrigger className="flex gap-2 bg-red-100">
-  <div className="w-3/5 h-full">
-    <Image
-      alt={trip.name}
-      src={trip.thumbnail}
-      layout="responsive"
-      className="rounded-md h-full object-cover"
-      width={900}
-      height={50}
-    />
-  </div>
-  <div className="flex flex-col gap-4 w-2/5 h-full">
-    <div className="flex-1">
-      <Image
-        alt={trip.name}
-        src={trip.images[0]}
-        className="rounded-md h-full object-cover"
-        layout="responsive"
-        width={500}
-        height={350}
-      />
-    </div>
-    <div className="flex-1">
-      <Image
-        alt={trip.name}
-        src={trip.images[1]}
-        className="rounded-md h-full object-cover"
-        layout="responsive"
-        width={500}
-        height={350}
-      />
-    </div>
-  </div>
-</AlertDialogTrigger>
+      <AlertDialogTrigger className="flex gap-2">
+        <div className="w-3/5 h-full">
+          <Image
+            alt={trip.name}
+            src={trip.thumbnail}
+            layout="responsive"
+            className="rounded-md h-full object-cover"
+            width={900}
+            height={50}
+          />
+        </div>
+        <div className="flex flex-col gap-4 w-2/5 h-full">
+          <div className="flex-1">
+            <Image
+              alt={trip.name}
+              src={trip.images?.[0]}
+              className="rounded-md h-full object-cover"
+              layout="responsive"
+              width={500}
+              height={350}
+            />
+          </div>
+          <div className="flex-1">
+            <Image
+              alt={trip.name}
+              src={trip.images[1]}
+              className="rounded-md h-full object-cover"
+              layout="responsive"
+              width={500}
+              height={350}
+            />
+          </div>
+        </div>
+      </AlertDialogTrigger>
 
       <AlertDialogContent>
         <Tabs>
@@ -73,7 +73,6 @@ export const ImageCarousel: React.FC = () => {
               <TabsTrigger value="account">Booking 1</TabsTrigger>
               <TabsTrigger value="password">Booking 2</TabsTrigger>
               <TabsTrigger value="password">Booking 2</TabsTrigger>
-           
             </TabsList>
             <AlertDialogCancel>
               <CloseSVG />

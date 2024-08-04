@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
 export type Trip = {
-  bio: string;
+  bio?: string;
   location: string;
-  images: string[];
+  images?: string[];
   id: string;
   name: string;
   thumbnail: string;
@@ -32,3 +32,4 @@ export type Accomodation = {
   sqMtr: number;
   image?: string;
 };
+

@@ -1,70 +1,20 @@
 import HotelImage from "../../../public/hotel.jpg";
 import Image from "next/image";
-import { z } from "zod";
 import { BedSVG, BathroomSVG, BookingComSVG } from "@/components/ui/icons";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import AccomodationData from "@/data/accomodation.json";
 
-interface Hotel {
-  title: string;
-  bathrooms: number;
-  bedrooms: number;
-  sqMtr: number;
-  image?: string;
-}
-
-const hotels: Hotel[] = [
-  {
-    title: "Beautfiul Apartment located 5 minutes from Central Station.",
-    bathrooms: 2,
-    bedrooms: 3,
-    sqMtr: 100,
-    image: "../../public/hotel.jpg",
-  },
-  {
-    title: "Beautfiul Apartment located 5 minutes from Central Station.",
-    bathrooms: 2,
-    bedrooms: 3,
-    sqMtr: 100,
-    image: "../../public/hotel.jpg",
-  },
-  {
-    title: "Beautfiul Apartment located 5 minutes from Central Station.",
-    bathrooms: 2,
-    bedrooms: 3,
-    sqMtr: 100,
-    image: "../../public/hotel.jpg",
-  },
-  {
-    title: "Beautfiul Apartment located 5 minutes from Central Station.",
-    bathrooms: 2,
-    bedrooms: 3,
-    sqMtr: 100,
-    image: "../../public/hotel.jpg",
-  },
-  {
-    title: "Beautfiul Apartment located 5 minutes from Central Station.",
-    bathrooms: 2,
-    bedrooms: 3,
-    sqMtr: 100,
-    image: "../../public/hotel.jpg",
-  },
-];
-
-const createTripSchema = z.object({
-  budget: z.number(),
-  date: z.date(),
-  people_count: z.number(),
-});
-
-const FlightList: React.FC = () => {
+const FlightsList: React.FC = () => {
   return (
     <ScrollArea className="h-screen">
       <div className="grid grid-cols-2 gap-4">
-        {hotels.map((hotel, index) => (
+        {AccomodationData.map((hotel, index) => (
           <div key={index} className="rounded-lg bg-white">
             <Image
               alt="hotel thumbnail"
-              src={HotelImage}
+              src={hotel.image}
+              width={400}
+              height={300}
               className="rounded-tl-xl rounded-tr-xl"
             />
             <div className="p-2 rounded-bl-xl rounded-br-xl">
@@ -93,4 +43,4 @@ const FlightList: React.FC = () => {
   );
 };
 
-export default FlightList;
+export default FlightsList;
