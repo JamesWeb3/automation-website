@@ -13,7 +13,7 @@ const BookingPage: NextPage = () => {
   return (
     <MainLayout>
       <Navbar />
-      <div className="flex mt-4 h-full gap-4">
+      <div className="flex mt-4 h-[88vh] gap-4">
         <Card className="w-1/3">
           <AccomodationForm />
         </Card>

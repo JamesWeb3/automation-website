@@ -1,6 +1,6 @@
 import Navbar from "@/layouts/navbar";
 import { AuthDialogIndex } from "@/components/auth";
-import SearchBar from "@/components/ui/search-bar";
+import SearchBar from "@/components/ui/search-bars/hero";
 import { DealsCarousel } from "@/components/deals-carousel";
 import Logo from "../../public/travallr_logo.png";
 import Image from "next/image";
@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
       <div className="flex flex-col gap-4 items-center gap- mt-12">
         <Image src={Logo} alt="logo" width={500} height={250} />
 
-        <h2 className="">Travel the world, all in one app</h2>
+        <h3>Travel the world, all in one app</h3>
         <SearchBar />
       </div>
       <div className="mt-4">

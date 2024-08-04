@@ -4,35 +4,37 @@
       "bathrooms": 2,
       "bedrooms": 3,
       "sqMtr": 100,
-      "image": "../../../public/hotel.jpg"
+      "image": "/accomodation/accomodation.jpg"
     },
     {
-      "title": "Stunning City View Apartment close to Central Station.",
+      "title": "Beautiful Apartment located 5 minutes from Central Station.",
       "bathrooms": 2,
       "bedrooms": 3,
       "sqMtr": 100,
-      "image": "../../../public/hotel.jpg"
+      "image": "/accomodation/accomodation1.jpg"
     },
     {
-      "title": "Modern and Cozy Apartment near Central Station.",
+      "title": "Beautiful Apartment located 5 minutes from Central Station.",
       "bathrooms": 2,
       "bedrooms": 3,
       "sqMtr": 100,
-      "image": "../../../public/hotel.jpg"
+      "image": "/accomodation/accomodation2.png"
     },
     {
-      "title": "Chic Apartment in Prime Location, 5 minutes from Central Station.",
+      "title": "Beautiful Apartment located 5 minutes from Central Station.",
       "bathrooms": 2,
       "bedrooms": 3,
       "sqMtr": 100,
-      "image": "../../../public/hotel.jpg"
+      "image": "/accomodation/accomodation3.png"
     },
     {
-      "title": "Elegant Apartment with Convenient Access to Central Station.",
+      "title": "Beautiful Apartment located 5 minutes from Central Station.",
       "bathrooms": 2,
       "bedrooms": 3,
       "sqMtr": 100,
-      "image": "../../../public/hotel.jpg"
+      "image": "/accomodation/accomodation4.png"
     }
+
   ]
+  
   

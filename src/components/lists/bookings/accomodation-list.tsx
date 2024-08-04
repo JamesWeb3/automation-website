@@ -1,13 +1,11 @@
 import Image from "next/image";
 import { BedSVG, BathroomSVG, BookingComSVG } from "@/components/ui/icons";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Accomodation } from "@/types/types";
-import HotelImage from "../../../public/hotel.jpg";
 import HotelData from "@/data/accomodation.json"
 
 const AccomodationList: React.FC = () => {
   return (
-    <ScrollArea className="h-screen">
+    <ScrollArea className="h-full">
       <div className="grid grid-cols-2 gap-4">
         {HotelData.map((hotel, index) => (
           <div key={index} className="rounded-lg bg-white">
