@@ -19,7 +19,8 @@ import {
   CommandInput,
   CommandItem,
 } from "@/components/ui/command";
-import { Button } from "../../ui/button";
+import { FilterFlightsProps } from "@/schemas/filter";
+import { Button } from "@/components/ui/button";
 import { CalendarIcon, Check, ChevronsUpDown } from "lucide-react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
@@ -28,7 +29,6 @@ import { format } from "date-fns";
 import { Calendar } from "@/components/ui/calendar";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import AccomodationProviderFilter from "@/components/forms/bookings/provider-filter.tsx/accomodation-filter";
 
 const frameworks = [
   { value: "next.js", label: "Next.js" },
@@ -38,27 +38,32 @@ const frameworks = [
   { value: "astro", label: "Astro" },
 ];
 
-type CreateTripSchema = z.infer<typeof createTripSchema>;
+type FilterFlightsProps = z.infer<typeof filterFlightsProps>;
 
-const createTripSchema = z.object({
-  budget: z.number(),
-  date: z.date(),
+const filterFlightsProps = z.object({
+  oneWay: z.boolean(),
+  from_location: z.date(),
+  to_location: z.date(),
   people_count: z.number(),
+  providers: z.array(z.string()),
 });
 
 const FlightsForm: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState("");
-  const form = useForm<CreateTripSchema>();
+  const form = useForm<FilterFlightsProps>();
 
-  const onSubmit: SubmitHandler<CreateTripSchema> = async (data) => {
+  const onSubmit: SubmitHandler<FilterFlightsProps> = async (data) => {
     console.log(data);
   };
 
-  const handleSelect = (currentValue: string) => {
+  const handleSelect = (
+    fieldName: keyof FilterFlightsProps,
+    currentValue: string
+  ) => {
     const newValue = currentValue === value ? "" : currentValue;
     setValue(newValue);
-    form?.setValue(field?.name, newValue); 
+    form?.setValue(fieldName, [newValue]);
     setOpen(false);
   };
 
@@ -79,14 +84,17 @@ const FlightsForm: React.FC = () => {
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 mt-4">
           <FormField
             control={form.control}
-            name="date"
+            name="oneWay"
             render={({ field }) => (
               <FormItem className="flex flex-col">
                 <div className="flex items-center space-x-2">
-                  <Switch id="airplane-mode" />
+                  <Switch
+                    id="airplane-mode"
+                    checked={field.value}
+                    onChange={field.onChange}
+                  />
                   <Label htmlFor="airplane-mode">One Way</Label>
                 </div>
-
                 <FormMessage />
               </FormItem>
             )}
@@ -94,7 +102,7 @@ const FlightsForm: React.FC = () => {
 
           <FormField
             control={form.control}
-            name="date"
+            name="from_location"
             render={({ field }) => (
               <FormItem className="flex flex-col">
                 <FormLabel className="flex justify-between font-semibold">
@@ -139,11 +147,11 @@ const FlightsForm: React.FC = () => {
 
           <FormField
             control={form.control}
-            name="date"
+            name="to_location"
             render={({ field }) => (
               <FormItem className="flex flex-col">
                 <FormLabel className="flex justify-between font-semibold">
-                  Arrinv On
+                  Arrive On
                 </FormLabel>
                 <Popover>
                   <PopoverTrigger asChild>
@@ -243,58 +251,54 @@ const FlightsForm: React.FC = () => {
 
           <FormField
             control={form.control}
-            name="date"
+            name="providers"
             render={({ field }) => (
               <FormItem className="flex flex-col">
                 <FormControl>
-                  <FormItem className="flex flex-col">
-                    <FormControl>
-                      <Popover open={open} onOpenChange={setOpen}>
-                        <PopoverTrigger asChild>
-                          <Button
-                            variant="outline"
-                            role="combobox"
-                            aria-expanded={open}
-                            className="w-[200px] justify-between"
-                          >
-                            {value
-                              ? frameworks?.find(
-                                  (framework) => framework.value === value
-                                )?.label
-                              : "Select framework..."}
-                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                          </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-[200px] p-0">
-                          <Command>
-                            <CommandInput placeholder="Search framework..." />
-                            <CommandEmpty>No framework found.</CommandEmpty>
-                            <CommandGroup>
-                              {frameworks?.map((framework) => (
-                                <CommandItem
-                                  key={framework.value}
-                                  value={framework.value}
-                                  onSelect={handleSelect}
-                                >
-                                  <Check
-                                    className={cn(
-                                      "mr-2 h-4 w-4",
-                                      value === framework.value
-                                        ? "opacity-100"
-                                        : "opacity-0"
-                                    )}
-                                  />
-                                  {framework.label}
-                                </CommandItem>
-                              ))}
-                            </CommandGroup>
-                          </Command>
-                        </PopoverContent>
-                      </Popover>
-                    </FormControl>
-
-                    <FormMessage />
-                  </FormItem>
+                  <Popover open={open} onOpenChange={setOpen}>
+                    <PopoverTrigger asChild>
+                      <Button
+                        variant="outline"
+                        role="combobox"
+                        aria-expanded={open}
+                        className="w-[200px] justify-between"
+                      >
+                        {value
+                          ? frameworks?.find(
+                              (framework) => framework.value === value
+                            )?.label
+                          : "Select framework..."}
+                        <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-[200px] p-0">
+                      <Command>
+                        <CommandInput placeholder="Search framework..." />
+                        <CommandEmpty>No framework found.</CommandEmpty>
+                        <CommandGroup>
+                          {frameworks?.map((framework) => (
+                            <CommandItem
+                              key={framework.value}
+                              value={framework.value}
+                              onSelect={() =>
+                                handleSelect("providers", framework.value)
+                              }
+                            >
+                              <Check
+                                className={cn(
+                                  "mr-2 h-4 w-4",
+                                  value === framework.value
+                                    ? "opacity-100"
+                                    : "opacity-0"
+                                )}
+                              />
+                              {framework.label}
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </Command>
+                    </PopoverContent>
+                  </Popover>
                 </FormControl>
 
                 <FormMessage />

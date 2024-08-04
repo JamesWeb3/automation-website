@@ -35,7 +35,11 @@ const BookingsSummary: React.FC = ({}) => {
       <p className="text-sm font-semibold">Booking Summary</p>
       <Separator />
       <ScrollArea>
-        <Accordion type="single" collapsible className="w-full [&[data-state=open]>]:border">
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full [&[data-state=open]>]:border"
+        >
           {trip.bookings.map((booking, bookingIndex) => (
             <AccordionItem
               className="relative"
@@ -61,7 +65,7 @@ const BookingsSummary: React.FC = ({}) => {
                     <DollarSign />
                   </div>
 
-                  <Trash2 className="hover:text-red-500 transition-ease"/>
+                  <Trash2 className="hover:text-red-500 transition-ease" />
                 </div>
               </AccordionTrigger>
               <AccordionContent className="flex justify-between">
@@ -91,8 +95,8 @@ const BookingsSummary: React.FC = ({}) => {
           ))}
         </Accordion>
       </ScrollArea>
-      
-      <AddBookingPopup/>
+
+      <AddBookingPopup />
 
       <div>
         <p>Total Trip Cost Cost</p>
@@ -101,10 +105,10 @@ const BookingsSummary: React.FC = ({}) => {
 
       <div className="flex w-full justify-between gap-4">
         <Button variant="outline" className="w-full">
-          Confirm & Pay Now ($2,499 USD)
+          Settle up Payment
         </Button>
         <Button onClick={handleClone} className="w-full">
-          Use & Edit Trip
+          Save All Changes
         </Button>
       </div>
     </div>

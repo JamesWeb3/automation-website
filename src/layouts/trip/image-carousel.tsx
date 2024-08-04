@@ -5,9 +5,7 @@ import {
   AlertDialog,
   AlertDialogCancel,
   AlertDialogContent,
-  AlertDialogFooter,
   AlertDialogHeader,
-  AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import {
@@ -17,12 +15,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { CloseSVG } from "@/components/ui/icons";
 
 export const ImageCarousel: React.FC = () => {
-  const { trip, loading } = useTripContext();
+  const { trip } = useTripContext();
 
   if (!trip) {
     return <p>click one of the trips in left column to load the data</p>;
@@ -45,7 +43,7 @@ export const ImageCarousel: React.FC = () => {
           <div className="flex-1">
             <Image
               alt={trip.name}
-              src={trip.images?.[0]}
+              src={trip.images?.[0] ?? ""}
               className="rounded-md h-full object-cover"
               layout="responsive"
               width={500}
@@ -55,7 +53,7 @@ export const ImageCarousel: React.FC = () => {
           <div className="flex-1">
             <Image
               alt={trip.name}
-              src={trip.images[1]}
+              src={trip.images?.[1] ?? ""}
               className="rounded-md h-full object-cover"
               layout="responsive"
               width={500}
@@ -65,14 +63,17 @@ export const ImageCarousel: React.FC = () => {
         </div>
       </AlertDialogTrigger>
 
-      <AlertDialogContent>
+      <AlertDialogContent className="max-w-[1000px]">
         <Tabs>
-          0/5
-          <AlertDialogHeader>
+          <div className="text-center text-xs mx-auto mb-2">0/5</div>
+
+          <AlertDialogHeader className="mx-auto justify-between">
+            <div />
             <TabsList className="flex flex-row gap-2">
               <TabsTrigger value="account">Booking 1</TabsTrigger>
               <TabsTrigger value="password">Booking 2</TabsTrigger>
-              <TabsTrigger value="password">Booking 2</TabsTrigger>
+              <TabsTrigger value="password">Booking 3</TabsTrigger>
+              <TabsTrigger value="password">Booking 4</TabsTrigger>
             </TabsList>
             <AlertDialogCancel>
               <CloseSVG />
@@ -80,14 +81,14 @@ export const ImageCarousel: React.FC = () => {
           </AlertDialogHeader>
         </Tabs>
 
-        <Carousel className="w-full max-w-xs">
+        <Carousel>
           <CarouselContent>
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index}>
                 <div className="p-1">
                   <Image
                     alt={trip.name}
-                    src={trip.images[1]}
+                    src={trip.images?.[1] ?? ""}
                     className="rounded-xl"
                     layout="responsive"
                     width={500}
