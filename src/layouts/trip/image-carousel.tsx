@@ -31,21 +31,21 @@ export const ImageCarousel: React.FC = () => {
   return (
     <AlertDialog>
       <AlertDialogTrigger className="flex gap-2">
-        <div className="w-2/3">
+        <div className="w-3/5">
           <Image
             alt={trip.name}
             src={trip.thumbnail}
             layout="responsive"
-            className="rounded-xl "
+            className="rounded-md"
             width={900}
             height={50}
           />
         </div>
-        <div className="flex flex-col gap-4 w-1/3">
+        <div className="flex flex-col gap-4 w-2/5">
           <Image
             alt={trip.name}
             src={trip.images[0]}
-            className="rounded-xl"
+            className="rounded-md"
             layout="responsive"
             width={500}
             height={350}
@@ -53,7 +53,7 @@ export const ImageCarousel: React.FC = () => {
           <Image
             alt={trip.name}
             src={trip.images[1]}
-            className="rounded-xl"
+            className="rounded-md"
             layout="responsive"
             width={500}
             height={350}
@@ -61,7 +61,7 @@ export const ImageCarousel: React.FC = () => {
         </div>
       </AlertDialogTrigger>
       <AlertDialogContent>
-        <Tabs defaultValue="">
+        <Tabs>
           0/5
           <AlertDialogHeader>
             <TabsList className="flex flex-row gap-2">
